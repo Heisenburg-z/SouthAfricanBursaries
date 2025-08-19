@@ -1,9 +1,3 @@
-Nice 🔥 — your **homepage looks professional already**!
-Since you’re going to put this on GitHub, let’s create a **README.md** that matches your project and explains what it does, how to run it, and where it’s going.
-
-Here’s a tailored version for your **Student Portal** repo:
-
----
 
 ```markdown
 # 🎓 Student Opportunities Portal  
