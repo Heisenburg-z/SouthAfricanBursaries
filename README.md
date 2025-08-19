@@ -1,11 +1,4 @@
-Nice 🔥 — your **homepage looks professional already**!
-Since you’re going to put this on GitHub, let’s create a **README.md** that matches your project and explains what it does, how to run it, and where it’s going.
 
-Here’s a tailored version for your **Student Portal** repo:
-
----
-
-```markdown
 # 🎓 Student Opportunities Portal  
 
 _A modern web platform for students to discover bursaries, internships, graduate programs, and learnerships — all in one place._  
@@ -60,7 +53,7 @@ README.md         # Documentation
    ```bash
    git clone https://github.com/your-username/student-opportunities.git
    cd student-opportunities
-````
+
 
 2. **Install dependencies**
 
