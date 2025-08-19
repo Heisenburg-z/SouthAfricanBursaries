@@ -15,6 +15,7 @@ import {
   Mail,
   Bell
 } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 
 function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -101,6 +102,15 @@ function HomePage() {
 
   return (
     <main className="flex-1">
+
+      {/* Add AdSense script in Helmet */}
+      <Helmet>
+        <script async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4674510559098884"
+          crossOrigin="anonymous">
+        </script>
+      </Helmet>
+
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white">
         <div className="absolute inset-0 bg-black/20"></div>
