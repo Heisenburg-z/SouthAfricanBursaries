@@ -1,5 +1,4 @@
 
-```markdown
 # 🎓 Student Opportunities Portal  
 
 _A modern web platform for students to discover bursaries, internships, graduate programs, and learnerships — all in one place._  
@@ -54,7 +53,7 @@ README.md         # Documentation
    ```bash
    git clone https://github.com/your-username/student-opportunities.git
    cd student-opportunities
-````
+
 
 2. **Install dependencies**
 
