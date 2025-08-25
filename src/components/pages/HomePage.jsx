@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   GraduationCap, 
@@ -13,70 +12,102 @@ import {
   Star,
   ExternalLink,
   Mail,
-  Bell
+  Bell,
+  DollarSign,
+  Home,
+  Percent
 } from 'lucide-react';
-import { Helmet } from 'react-helmet';
 
 function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [email, setEmail] = useState('');
 
-  const opportunities = [
-    {
-      id: 1,
-      title: "MTN Foundation STEM Bursary",
-      category: "bursary",
-      field: "Engineering & IT",
-      deadline: "2025-09-15",
-      amount: "R150,000",
-      location: "South Africa",
-      rating: 4.8,
-      applications: 1250,
-      description: "Full bursary covering tuition, accommodation, and stipend for STEM students."
+const opportunities = [
+  {
+    id: 1,
+    title: "MTN Foundation STEM Bursary",
+    category: "bursary",
+    field: "Engineering & IT",
+    deadline: "2025-09-15",
+    funding: {
+      tuition: "R85,000",
+      accommodation: "R100,000",
+      allowance: "R2,000/month"
     },
-    {
-      id: 2,
-      title: "Deloitte Graduate Programme",
-      category: "graduate",
-      field: "Finance & Consulting",
-      deadline: "2025-08-30",
-      amount: "R25,000/month",
-      location: "Johannesburg",
-      rating: 4.7,
-      applications: 890,
-      description: "18-month graduate development program with rotation opportunities."
+    location: "South Africa",
+    rating: 4.8,
+    applications: 1250,
+    minAverage: "65%",
+    applyMethod: {
+      type: "site",
+      url: "/apply/mtn-stem"
     },
-    {
-      id: 3,
-      title: "Standard Bank IT Internship",
-      category: "internship",
-      field: "Information Technology",
-      deadline: "2025-09-01",
-      amount: "R8,000/month",
-      location: "Cape Town",
-      rating: 4.6,
-      applications: 567,
-      description: "6-month internship in software development and data analytics."
+    description: "Full bursary covering tuition, accommodation, and stipend for STEM students."
+  },
+  {
+    id: 2,
+    title: "Deloitte Graduate Programme",
+    category: "graduate",
+    field: "Finance & Consulting",
+    deadline: "2025-08-30",
+    funding: {
+      allowance: "R25,000/month"
     },
-    {
-      id: 4,
-      title: "Sasol Engineering Learnership",
-      category: "learnership",
-      field: "Chemical Engineering",
-      deadline: "2025-10-01",
-      amount: "R12,000/month",
-      location: "Secunda",
-      rating: 4.9,
-      applications: 345,
-      description: "24-month learnership with guaranteed employment upon completion."
-    }
-  ];
+    location: "Johannesburg",
+    rating: 4.7,
+    applications: 890,
+    minAverage: "60%",
+    applyMethod: {
+      type: "redirect",
+      url: "https://careers.deloitte.com"
+    },
+    description: "18-month graduate development program with rotation opportunities."
+  },
+  {
+    id: 3,
+    title: "Standard Bank IT Internship",
+    category: "internship",
+    field: "Information Technology",
+    deadline: "2025-09-01",
+    funding: {
+      allowance: "R8,000/month"
+    },
+    location: "Cape Town",
+    rating: 4.6,
+    applications: 567,
+    minAverage: "55%",
+    applyMethod: {
+      type: "redirect",
+      url: "https://standardbank.com/careers"
+    },
+    description: "6-month internship in software development and data analytics."
+  },
+  {
+    id: 4,
+    title: "Sasol Engineering Learnership",
+    category: "learnership",
+    field: "Chemical Engineering",
+    deadline: "2025-10-01",
+    funding: {
+      allowance: "R12,000/month"
+    },
+    location: "Secunda",
+    rating: 4.9,
+    applications: 345,
+    minAverage: "50%",
+    applyMethod: {
+      type: "site",
+      url: "/apply/sasol-learnership"
+    },
+    description: "24-month learnership with guaranteed employment upon completion."
+  }
+];
 
   const stats = [
-    { label: "Active Opportunities", value: "2,847", icon: TrendingUp, color: "text-green-600" },
-    { label: "Students Placed", value: "15,234", icon: Users, color: "text-blue-600" },
-    { label: "Partner Companies", value: "456", icon: Briefcase, color: "text-purple-600" },
-    { label: "Success Rate", value: "89%", icon: Star, color: "text-yellow-600" }
+    { label: "Active Opportunities", value: "2,847", icon: TrendingUp, color: "text-emerald-600" },
+    { label: "Students Placed", value: "15,234", icon: Users, color: "text-slate-600" },
+    { label: "Partner Companies", value: "456", icon: Briefcase, color: "text-amber-600" },
+    { label: "Success Rate", value: "89%", icon: Star, color: "text-orange-600" }
   ];
 
   const categories = [
@@ -100,59 +131,58 @@ function HomePage() {
     }
   };
 
+  const formatFunding = (funding) => {
+    const parts = [];
+    if (funding.tuition) parts.push(`Tuition: ${funding.tuition}`);
+    if (funding.accommodation) parts.push(`Accommodation: ${funding.accommodation}`);
+    if (funding.allowance) parts.push(`Allowance: ${funding.allowance}`);
+    return parts;
+  };
+
   return (
     <main className="flex-1">
-
-      {/* Add AdSense script in Helmet */}
-      <Helmet>
-        <script async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4674510559098884"
-          crossOrigin="anonymous">
-        </script>
-      </Helmet>
-
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 text-white">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 text-white">
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-in fade-in slide-in-from-bottom duration-1000">
               Unlock Your
-              <span className="block bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
-                Future Today
+              <span className="block bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+                Professional Future
               </span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom duration-1000 delay-200">
-              Discover bursaries, internships, and graduate programs all in one place. 
-              Your dream opportunity is just a click away.
+            <p className="text-xl md:text-2xl mb-8 text-slate-300 max-w-3xl mx-auto animate-in fade-in slide-in-from-bottom duration-1000 delay-200">
+              Discover verified bursaries, internships, and graduate programs from leading companies. 
+              Your career starts here.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom duration-1000 delay-400">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Explore Opportunities
+              <button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Browse Opportunities
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105">
+              <button className="border-2 border-slate-400 text-slate-300 hover:bg-slate-200 hover:text-slate-800 px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 Learn More
               </button>
             </div>
           </div>
         </div>
         
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-yellow-300/20 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 bg-purple-300/20 rounded-full animate-bounce"></div>
-        <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-white/30 rounded-full animate-ping"></div>
+        {/* Professional accent elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-emerald-500/10 rounded-full"></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 bg-slate-600/20 rounded-full"></div>
+        <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-emerald-400/30 rounded-full"></div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group hover:scale-105 transition-transform duration-300">
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-6 shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                <div className="bg-white rounded-xl p-6 shadow-lg group-hover:shadow-xl transition-shadow duration-300 border border-slate-200">
                   <stat.icon className={`h-8 w-8 mx-auto mb-4 ${stat.color}`} />
-                  <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
+                  <div className="text-3xl font-bold text-slate-900 mb-2">{stat.value}</div>
+                  <div className="text-sm text-slate-600">{stat.label}</div>
                 </div>
               </div>
             ))}
@@ -161,14 +191,14 @@ function HomePage() {
       </section>
 
       {/* Categories Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-50 to-purple-50">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Find Your Perfect Opportunity
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Browse by category to discover opportunities tailored to your career goals
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Browse verified opportunities from leading South African companies and institutions
             </p>
           </div>
 
@@ -178,10 +208,10 @@ function HomePage() {
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
+                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md'
+                    ? 'bg-emerald-600 text-white shadow-lg'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-300'
                 }`}
               >
                 <category.icon className="h-5 w-5" />
@@ -191,48 +221,75 @@ function HomePage() {
           </div>
 
           {/* Opportunities Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {filteredOpportunities.map((opportunity) => (
-              <div key={opportunity.id} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+              <div key={opportunity.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 overflow-hidden">
                 <div className="p-6">
+                  {/* Header with category and rating */}
                   <div className="flex items-start justify-between mb-4">
                     <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      opportunity.category === 'bursary' ? 'bg-green-100 text-green-700' :
-                      opportunity.category === 'internship' ? 'bg-blue-100 text-blue-700' :
-                      opportunity.category === 'graduate' ? 'bg-purple-100 text-purple-700' :
-                      'bg-orange-100 text-orange-700'
+                      opportunity.category === 'bursary' ? 'bg-emerald-100 text-emerald-800' :
+                      opportunity.category === 'internship' ? 'bg-slate-100 text-slate-800' :
+                      opportunity.category === 'graduate' ? 'bg-amber-100 text-amber-800' :
+                      'bg-orange-100 text-orange-800'
                     }`}>
                       {opportunity.category.toUpperCase()}
                     </div>
                     <div className="flex items-center space-x-1">
-                      <Star className="h-4 w-4 text-yellow-500 fill-current" />
-                      <span className="text-sm text-gray-600">{opportunity.rating}</span>
+                      <Star className="h-4 w-4 text-amber-500 fill-current" />
+                      <span className="text-sm text-slate-600 font-medium">{opportunity.rating}</span>
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{opportunity.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm leading-relaxed">{opportunity.description}</p>
+                  {/* Title and Description */}
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{opportunity.title}</h3>
+                  <p className="text-slate-600 mb-4 text-sm leading-relaxed">{opportunity.description}</p>
 
-                  <div className="space-y-2 mb-6">
-                    <div className="flex items-center text-sm text-gray-600">
-                      <Award className="h-4 w-4 mr-2 text-green-500" />
-                      <span className="font-semibold">{opportunity.amount}</span>
+                  {/* Field */}
+                  <div className="mb-4 p-3 bg-slate-50 rounded-lg">
+                    <div className="flex items-center text-sm text-slate-700 font-medium">
+                      <GraduationCap className="h-4 w-4 mr-2 text-emerald-600" />
+                      <span>{opportunity.field}</span>
                     </div>
-                    <div className="flex items-center text-sm text-gray-600">
-                      <MapPin className="h-4 w-4 mr-2 text-blue-500" />
+                  </div>
+
+                  {/* Funding Information */}
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-slate-900 mb-2 flex items-center">
+                      <DollarSign className="h-4 w-4 mr-1 text-emerald-600" />
+                      Funding Details:
+                    </h4>
+                    <div className="space-y-1">
+                      {formatFunding(opportunity.funding).map((funding, index) => (
+                        <div key={index} className="text-sm text-slate-600 bg-emerald-50 px-3 py-1 rounded border-l-4 border-emerald-400">
+                          {funding}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Key Details Grid */}
+                  <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+                    <div className="flex items-center text-slate-600">
+                      <MapPin className="h-4 w-4 mr-2 text-slate-500" />
                       <span>{opportunity.location}</span>
                     </div>
-                    <div className="flex items-center text-sm text-gray-600">
-                      <Calendar className="h-4 w-4 mr-2 text-purple-500" />
-                      <span>Deadline: {new Date(opportunity.deadline).toLocaleDateString()}</span>
+                    <div className="flex items-center text-slate-600">
+                      <Percent className="h-4 w-4 mr-2 text-slate-500" />
+                      <span>Min: {opportunity.minAverage}</span>
                     </div>
-                    <div className="flex items-center text-sm text-gray-600">
-                      <Users className="h-4 w-4 mr-2 text-orange-500" />
-                      <span>{opportunity.applications} applications</span>
+                    <div className="flex items-center text-slate-600">
+                      <Calendar className="h-4 w-4 mr-2 text-slate-500" />
+                      <span>{new Date(opportunity.deadline).toLocaleDateString()}</span>
+                    </div>
+                    <div className="flex items-center text-slate-600">
+                      <Users className="h-4 w-4 mr-2 text-slate-500" />
+                      <span>{opportunity.applications} applicants</span>
                     </div>
                   </div>
 
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2">
+                  {/* Apply Button */}
+                  <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 shadow-md hover:shadow-lg">
                     <span>Apply Now</span>
                     <ExternalLink className="h-4 w-4" />
                   </button>
@@ -243,7 +300,7 @@ function HomePage() {
 
           {/* Load More Button */}
           <div className="text-center mt-12">
-            <button className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105">
+            <button className="bg-slate-100 hover:bg-slate-200 text-slate-800 border-2 border-slate-300 px-8 py-3 rounded-lg font-semibold transition-all duration-300">
               Load More Opportunities
             </button>
           </div>
@@ -251,13 +308,13 @@ function HomePage() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-16 bg-slate-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20">
-            <Mail className="h-12 w-12 mx-auto mb-6 text-yellow-300" />
-            <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-            <p className="text-lg text-blue-100 mb-8">
-              Get weekly updates on new opportunities, application deadlines, and career tips
+          <div className="bg-slate-700/50 backdrop-blur-sm rounded-xl p-8 border border-slate-600">
+            <Mail className="h-12 w-12 mx-auto mb-6 text-emerald-400" />
+            <h2 className="text-3xl font-bold mb-4">Stay Informed</h2>
+            <p className="text-lg text-slate-300 mb-8">
+              Receive weekly updates on new opportunities, application deadlines, and career insights
             </p>
             
             <div className="max-w-md mx-auto">
@@ -267,64 +324,64 @@ function HomePage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
-                  className="flex-1 px-6 py-3 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-white/30"
+                  className="flex-1 px-6 py-3 rounded-lg text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-4 focus:ring-emerald-600/30"
                 />
                 <button
                   onClick={handleNewsletterSignup}
-                  className="bg-yellow-400 text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg"
                 >
                   Subscribe
                 </button>
               </div>
             </div>
             
-            <p className="text-sm text-blue-200 mt-4">
-              Join 50,000+ students already receiving our weekly newsletter
+            <p className="text-sm text-slate-400 mt-4">
+              Join 50,000+ students receiving our weekly newsletter
             </p>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="about" className="py-16 bg-white">
+      <section id="about" className="py-16 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
               Why Choose Student Portal?
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              We make finding and applying for opportunities simple, fast, and effective
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              Professional tools and verified opportunities to accelerate your career
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center group">
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Search className="h-10 w-10 text-blue-600" />
+              <div className="bg-white border-2 border-slate-200 w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:border-emerald-400 transition-all duration-300">
+                <Search className="h-10 w-10 text-slate-700 group-hover:text-emerald-600 transition-colors duration-300" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Smart Search</h3>
-              <p className="text-gray-600">
-                Advanced filtering by field of study, location, deadline, and funding amount to find exactly what you need.
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Advanced Search</h3>
+              <p className="text-slate-600">
+                Filter by field of study, location, funding amount, and minimum academic requirements to find the perfect match.
               </p>
             </div>
 
             <div className="text-center group">
-              <div className="bg-gradient-to-br from-purple-100 to-purple-200 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Bell className="h-10 w-10 text-purple-600" />
+              <div className="bg-white border-2 border-slate-200 w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:border-emerald-400 transition-all duration-300">
+                <Bell className="h-10 w-10 text-slate-700 group-hover:text-emerald-600 transition-colors duration-300" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Real-time Updates</h3>
-              <p className="text-gray-600">
-                Get instant notifications about new opportunities, deadline reminders, and application status updates.
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Smart Notifications</h3>
+              <p className="text-slate-600">
+                Receive timely alerts about new opportunities, approaching deadlines, and application status updates.
               </p>
             </div>
 
             <div className="text-center group">
-              <div className="bg-gradient-to-br from-green-100 to-green-200 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Award className="h-10 w-10 text-green-600" />
+              <div className="bg-white border-2 border-slate-200 w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:border-emerald-400 transition-all duration-300">
+                <Award className="h-10 w-10 text-slate-700 group-hover:text-emerald-600 transition-colors duration-300" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Verified Opportunities</h3>
-              <p className="text-gray-600">
-                All opportunities are verified and updated regularly to ensure legitimacy and current information.
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Verified Partners</h3>
+              <p className="text-slate-600">
+                All opportunities are verified with legitimate companies and institutions, ensuring quality and reliability.
               </p>
             </div>
           </div>
@@ -333,4 +390,5 @@ function HomePage() {
     </main>
   );
 }
+
 export default HomePage;

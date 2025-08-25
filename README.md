@@ -29,7 +29,7 @@ The portal aims to:
 - **Frontend:** React + TailwindCSS + Lucide Icons  
 - **State Management:** React Hooks (useState)  
 - **Hosting (suggested):** Vercel / Netlify  
-- **Backend (future):** Node.js / Azure Functions + MongoDB (for dynamic content & email storage)  
+- **Backend (future):** Node.js  + MongoDB  
 
 ---
 
