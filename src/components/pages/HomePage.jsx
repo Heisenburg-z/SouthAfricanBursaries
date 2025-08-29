@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   GraduationCap, 
   Briefcase, 
@@ -21,94 +21,10 @@ import {
 function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [email, setEmail] = useState('');
-
-const opportunities = [
-  {
-    id: 1,
-    title: "MTN Foundation STEM Bursary",
-    category: "bursary",
-    field: "Engineering & IT",
-    deadline: "2025-09-15",
-    funding: {
-      tuition: "R85,000",
-      accommodation: "R100,000",
-      allowance: "R2,000/month"
-    },
-    location: "South Africa",
-    rating: 4.8,
-    applications: 1250,
-    minAverage: "65%",
-    applyMethod: {
-      type: "site",
-      url: "/apply/mtn-stem"
-    },
-    description: "Full bursary covering tuition, accommodation, and stipend for STEM students."
-  },
-  {
-    id: 2,
-    title: "Deloitte Graduate Programme",
-    category: "graduate",
-    field: "Finance & Consulting",
-    deadline: "2025-08-30",
-    funding: {
-      allowance: "R25,000/month"
-    },
-    location: "Johannesburg",
-    rating: 4.7,
-    applications: 890,
-    minAverage: "60%",
-    applyMethod: {
-      type: "redirect",
-      url: "https://careers.deloitte.com"
-    },
-    description: "18-month graduate development program with rotation opportunities."
-  },
-  {
-    id: 3,
-    title: "Standard Bank IT Internship",
-    category: "internship",
-    field: "Information Technology",
-    deadline: "2025-09-01",
-    funding: {
-      allowance: "R8,000/month"
-    },
-    location: "Cape Town",
-    rating: 4.6,
-    applications: 567,
-    minAverage: "55%",
-    applyMethod: {
-      type: "redirect",
-      url: "https://standardbank.com/careers"
-    },
-    description: "6-month internship in software development and data analytics."
-  },
-  {
-    id: 4,
-    title: "Sasol Engineering Learnership",
-    category: "learnership",
-    field: "Chemical Engineering",
-    deadline: "2025-10-01",
-    funding: {
-      allowance: "R12,000/month"
-    },
-    location: "Secunda",
-    rating: 4.9,
-    applications: 345,
-    minAverage: "50%",
-    applyMethod: {
-      type: "site",
-      url: "/apply/sasol-learnership"
-    },
-    description: "24-month learnership with guaranteed employment upon completion."
-  }
-];
-
-  const stats = [
-    { label: "Active Opportunities", value: "2,847", icon: TrendingUp, color: "text-emerald-600" },
-    { label: "Students Placed", value: "15,234", icon: Users, color: "text-slate-600" },
-    { label: "Partner Companies", value: "456", icon: Briefcase, color: "text-amber-600" },
-    { label: "Success Rate", value: "89%", icon: Star, color: "text-orange-600" }
-  ];
+  const [opportunities, setOpportunities] = useState([]);
+  const [stats, setStats] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const categories = [
     { id: 'all', name: 'All Opportunities', icon: Search },
@@ -118,14 +34,90 @@ const opportunities = [
     { id: 'learnership', name: 'Learnerships', icon: TrendingUp }
   ];
 
-  const filteredOpportunities = selectedCategory === 'all' 
-    ? opportunities 
-    : opportunities.filter(opp => opp.category === selectedCategory);
+  useEffect(() => {
+    fetchOpportunities();
+    fetchStats();
+  }, []);
 
-  const handleNewsletterSignup = () => {
+  const fetchOpportunities = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/opportunities`);
+      //const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/opportunities`);
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch opportunities');
+      }
+      const data = await response.json();
+      setOpportunities(Array.isArray(data) ? data : []);// Ensure data is an array
+      setOpportunities(data);
+    } catch (err) {
+      setError(err.message);
+      console.error('Error fetching opportunities:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // const fetchStats = async () => {
+  //   try {
+  //     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/stats`);
+  //     if (!response.ok) {
+  //       throw new Error('Failed to fetch stats');
+  //     }
+  //     const data = await response.json();
+  //     setStats(data);
+  //   } catch (err) {
+  //     console.error('Error fetching stats:', err);
+  //     // Set default stats if API fails
+  //     setStats([
+  //       { label: "Active Opportunities", value: "2,847", icon: TrendingUp, color: "text-emerald-600" },
+  //       { label: "Students Placed", value: "15,234", icon: Users, color: "text-slate-600" },
+  //       { label: "Partner Companies", value: "456", icon: Briefcase, color: "text-amber-600" },
+  //       { label: "Success Rate", value: "89%", icon: Star, color: "text-orange-600" }
+  //     ]);
+  //   }
+  // };
+
+  const fetchStats = async () => {
+  // Hardcoded data for now
+  setStats([
+    { label: "Active Opportunities", value: "2,847", icon: TrendingUp, color: "text-emerald-600" },
+    { label: "Students Placed", value: "15,234", icon: Users, color: "text-slate-600" },
+    { label: "Partner Companies", value: "456", icon: Briefcase, color: "text-amber-600" },
+    { label: "Success Rate", value: "89%", icon: Star, color: "text-orange-600" }
+  ]);
+};
+
+
+const filteredOpportunities = Array.isArray(opportunities) 
+  ? (selectedCategory === 'all' 
+      ? opportunities 
+      : opportunities.filter(opp => opp.category === selectedCategory))
+  : [];
+
+  const handleNewsletterSignup = async () => {
     if (email.trim()) {
-      alert(`Thank you for subscribing with email: ${email}`);
-      setEmail('');
+      try {
+        
+        const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/newsletter/subscribe`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email }),
+        });
+        
+        if (response.ok) {
+          alert(`Thank you for subscribing with email: ${email}`);
+          setEmail('');
+        } else {
+          throw new Error('Subscription failed');
+        }
+      } catch (err) {
+        alert('Subscription failed. Please try again later.');
+        console.error('Error subscribing to newsletter:', err);
+      }
     } else {
       alert('Please enter a valid email address');
     }
@@ -138,6 +130,42 @@ const opportunities = [
     if (funding.allowance) parts.push(`Allowance: ${funding.allowance}`);
     return parts;
   };
+
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleDateString('en-ZA', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+  };
+
+  if (loading) {
+    return (
+      <main className="flex-1 flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto"></div>
+          <p className="mt-4 text-slate-600">Loading opportunities...</p>
+        </div>
+      </main>
+    );
+  }
+
+  if (error) {
+    return (
+      <main className="flex-1 flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="text-red-500 text-xl mb-4">Error loading opportunities</div>
+          <p className="text-slate-600 mb-4">{error}</p>
+          <button 
+            onClick={fetchOpportunities}
+            className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg"
+          >
+            Try Again
+          </button>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <main className="flex-1">
@@ -221,82 +249,88 @@ const opportunities = [
           </div>
 
           {/* Opportunities Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {filteredOpportunities.map((opportunity) => (
-              <div key={opportunity.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 overflow-hidden">
-                <div className="p-6">
-                  {/* Header with category and rating */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      opportunity.category === 'bursary' ? 'bg-emerald-100 text-emerald-800' :
-                      opportunity.category === 'internship' ? 'bg-slate-100 text-slate-800' :
-                      opportunity.category === 'graduate' ? 'bg-amber-100 text-amber-800' :
-                      'bg-orange-100 text-orange-800'
-                    }`}>
-                      {opportunity.category.toUpperCase()}
+          {filteredOpportunities.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-slate-500 text-lg">No opportunities found in this category.</p>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+              {filteredOpportunities.map((opportunity) => (
+                <div key={opportunity._id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200 overflow-hidden">
+                  <div className="p-6">
+                    {/* Header with category and rating */}
+                    <div className="flex items-start justify-between mb-4">
+                      <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                        opportunity.category === 'bursary' ? 'bg-emerald-100 text-emerald-800' :
+                        opportunity.category === 'internship' ? 'bg-slate-100 text-slate-800' :
+                        opportunity.category === 'graduate' ? 'bg-amber-100 text-amber-800' :
+                        'bg-orange-100 text-orange-800'
+                      }`}>
+                        {opportunity.category.toUpperCase()}
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <Star className="h-4 w-4 text-amber-500 fill-current" />
+                        <span className="text-sm text-slate-600 font-medium">{opportunity.rating}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center space-x-1">
-                      <Star className="h-4 w-4 text-amber-500 fill-current" />
-                      <span className="text-sm text-slate-600 font-medium">{opportunity.rating}</span>
+
+                    {/* Title and Description */}
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{opportunity.title}</h3>
+                    <p className="text-slate-600 mb-4 text-sm leading-relaxed">{opportunity.description}</p>
+
+                    {/* Field */}
+                    <div className="mb-4 p-3 bg-slate-50 rounded-lg">
+                      <div className="flex items-center text-sm text-slate-700 font-medium">
+                        <GraduationCap className="h-4 w-4 mr-2 text-emerald-600" />
+                        <span>{opportunity.field}</span>
+                      </div>
                     </div>
+
+                    {/* Funding Information */}
+                    <div className="mb-4">
+                      <h4 className="text-sm font-semibold text-slate-900 mb-2 flex items-center">
+                        <DollarSign className="h-4 w-4 mr-1 text-emerald-600" />
+                        Funding Details:
+                      </h4>
+                      <div className="space-y-1">
+                        {formatFunding(opportunity.funding).map((funding, index) => (
+                          <div key={index} className="text-sm text-slate-600 bg-emerald-50 px-3 py-1 rounded border-l-4 border-emerald-400">
+                            {funding}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Key Details Grid */}
+                    <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+                      <div className="flex items-center text-slate-600">
+                        <MapPin className="h-4 w-4 mr-2 text-slate-500" />
+                        <span>{opportunity.location}</span>
+                      </div>
+                      <div className="flex items-center text-slate-600">
+                        <Percent className="h-4 w-4 mr-2 text-slate-500" />
+                        <span>Min: {opportunity.eligibility?.minimumAverage || "N/A"}</span>
+                      </div>
+                      <div className="flex items-center text-slate-600">
+                        <Calendar className="h-4 w-4 mr-2 text-slate-500" />
+                        <span>{formatDate(opportunity.applicationDeadline)}</span>
+                      </div>
+                      <div className="flex items-center text-slate-600">
+                        <Users className="h-4 w-4 mr-2 text-slate-500" />
+                        <span>{opportunity.applicationsCount || 0} applicants</span>
+                      </div>
+                    </div>
+
+                    {/* Apply Button */}
+                    <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 shadow-md hover:shadow-lg">
+                      <span>Apply Now</span>
+                      <ExternalLink className="h-4 w-4" />
+                    </button>
                   </div>
-
-                  {/* Title and Description */}
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{opportunity.title}</h3>
-                  <p className="text-slate-600 mb-4 text-sm leading-relaxed">{opportunity.description}</p>
-
-                  {/* Field */}
-                  <div className="mb-4 p-3 bg-slate-50 rounded-lg">
-                    <div className="flex items-center text-sm text-slate-700 font-medium">
-                      <GraduationCap className="h-4 w-4 mr-2 text-emerald-600" />
-                      <span>{opportunity.field}</span>
-                    </div>
-                  </div>
-
-                  {/* Funding Information */}
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-slate-900 mb-2 flex items-center">
-                      <DollarSign className="h-4 w-4 mr-1 text-emerald-600" />
-                      Funding Details:
-                    </h4>
-                    <div className="space-y-1">
-                      {formatFunding(opportunity.funding).map((funding, index) => (
-                        <div key={index} className="text-sm text-slate-600 bg-emerald-50 px-3 py-1 rounded border-l-4 border-emerald-400">
-                          {funding}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Key Details Grid */}
-                  <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
-                    <div className="flex items-center text-slate-600">
-                      <MapPin className="h-4 w-4 mr-2 text-slate-500" />
-                      <span>{opportunity.location}</span>
-                    </div>
-                    <div className="flex items-center text-slate-600">
-                      <Percent className="h-4 w-4 mr-2 text-slate-500" />
-                      <span>Min: {opportunity.minAverage}</span>
-                    </div>
-                    <div className="flex items-center text-slate-600">
-                      <Calendar className="h-4 w-4 mr-2 text-slate-500" />
-                      <span>{new Date(opportunity.deadline).toLocaleDateString()}</span>
-                    </div>
-                    <div className="flex items-center text-slate-600">
-                      <Users className="h-4 w-4 mr-2 text-slate-500" />
-                      <span>{opportunity.applications} applicants</span>
-                    </div>
-                  </div>
-
-                  {/* Apply Button */}
-                  <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 shadow-md hover:shadow-lg">
-                    <span>Apply Now</span>
-                    <ExternalLink className="h-4 w-4" />
-                  </button>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           {/* Load More Button */}
           <div className="text-center mt-12">
