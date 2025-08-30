@@ -39,25 +39,47 @@ function HomePage() {
     fetchStats();
   }, []);
 
-  const fetchOpportunities = async () => {
-    try {
-      setLoading(true);
-      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/opportunities`);
-      //const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/opportunities`);
+const fetchOpportunities = async () => {
+  try {
+    setLoading(true);
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/opportunities`);
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch opportunities');
-      }
-      const data = await response.json();
-      setOpportunities(Array.isArray(data) ? data : []);// Ensure data is an array
-      setOpportunities(data);
-    } catch (err) {
-      setError(err.message);
-      console.error('Error fetching opportunities:', err);
-    } finally {
-      setLoading(false);
+    if (!response.ok) {
+      throw new Error('Failed to fetch opportunities');
     }
-  };
+    
+    const data = await response.json();
+    
+    // Handle different possible data structures from your API
+    let opportunitiesArray = [];
+    
+    if (Array.isArray(data)) {
+      // API returns array directly: [...]
+      opportunitiesArray = data;
+    } else if (data && Array.isArray(data.opportunities)) {
+      // API returns object with opportunities property: { opportunities: [...] }
+      opportunitiesArray = data.opportunities;
+    } else if (data && Array.isArray(data.data)) {
+      // API returns object with data property: { data: [...] }
+      opportunitiesArray = data.data;
+    } else if (data && typeof data === 'object') {
+      // API returns single object, wrap in array
+      opportunitiesArray = [data];
+    } else {
+      console.warn('Unexpected data structure from API:', data);
+      opportunitiesArray = [];
+    }
+    
+    setOpportunities(opportunitiesArray);
+    
+  } catch (err) {
+    setError(err.message);
+    console.error('Error fetching opportunities:', err);
+    setOpportunities([]); // Reset to empty array on error
+  } finally {
+    setLoading(false);
+  }
+};
 
   // const fetchStats = async () => {
   //   try {
