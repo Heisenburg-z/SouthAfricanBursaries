@@ -62,7 +62,7 @@ function Header() {
                   />
                 </div>
                 <button className="relative p-2 text-slate-600 hover:text-emerald-600 transition-colors duration-200 hover:bg-slate-100 rounded-lg">
-                  <Bell className="h-5 w-5" />
+                 
                   <span className="absolute top-1 right-1 h-2 w-2 bg-amber-500 rounded-full"></span>
                 </button>
               </div>
@@ -75,9 +75,9 @@ function Header() {
                   to={user.isAdmin ? "/admin" : "/dashboard"}
                   className="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-lg transition-colors duration-200"
                 >
-                  <User className="h-4 w-4 text-slate-700" />
+
                   <span className="text-sm font-medium text-slate-800">
-                    {user.firstName}
+                    {"My Portal"}
                   </span>
                 </Link>
                 <button
