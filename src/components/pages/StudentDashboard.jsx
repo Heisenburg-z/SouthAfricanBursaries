@@ -19,7 +19,7 @@ import {
   Briefcase,
   ExternalLink
 } from 'lucide-react';
-
+import ProfileUpdate from './components/ProfileUpdate.jsx';
 function StudentDashboard() {
   const [activeTab, setActiveTab] = useState('overview');
   const [userData, setUserData] = useState(null);
@@ -27,6 +27,7 @@ function StudentDashboard() {
   const [upcomingDeadlines, setUpcomingDeadlines] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showProfileUpdate, setShowProfileUpdate] = useState(false);
 
   useEffect(() => {
     const fetchDashboardData = async () => {
@@ -47,7 +48,7 @@ function StudentDashboard() {
         };
 
         // Fetch user data with profile completion
-        const userResponse = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/users/profile/complete`, {
+        const userResponse = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/profile/complete`, {
           headers
         });
 
@@ -306,7 +307,10 @@ function StudentDashboard() {
                 </div>
               </div>
 
-              <button className="w-full mt-6 bg-slate-100 hover:bg-slate-200 text-slate-800 py-2 px-4 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center">
+              <button 
+                onClick={() => setShowProfileUpdate(true)}
+                className="w-full mt-6 bg-slate-100 hover:bg-slate-200 text-slate-800 py-2 px-4 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center"
+              >
                 <Settings className="h-4 w-4 mr-2" />
                 Edit Profile
               </button>
@@ -505,14 +509,30 @@ function StudentDashboard() {
                     <Calendar className="h-3 w-3 mr-1" />
                     <span>Closes in 21 days</span>
                   </div>
+
+
+
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {/* Profile Update Modal */}
+{showProfileUpdate && (
+  <ProfileUpdate
+    userData={userData}
+    onProfileUpdate={(updatedUser) => {
+      setUserData(updatedUser);
+      setShowProfileUpdate(false);
+    }}
+    onClose={() => setShowProfileUpdate(false)}
+  />
+)}
     </div>
-  );
+
+
+);
 }
 
 export default StudentDashboard;
