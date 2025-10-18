@@ -34,89 +34,118 @@ function HomePage() {
     { id: 'learnership', name: 'Learnerships', icon: TrendingUp }
   ];
 
+  // ✅ Revised with USAf-hosted logos (public directory)
+  const universityLogos = [
+    {
+      name: "University of the Witwatersrand",
+      url: "https://usaf.ac.za/wp-content/uploads/2023/08/University_of_Witwatersrand_logo.webp",
+      height: "h-9"
+    },
+    {
+      name: "University of the Free State",
+      url: "https://usaf.ac.za/wp-content/uploads/2023/08/University_of_the_Free_State-logo.webp",
+      height: "h-8"
+    },
+    {
+      name: "University of Cape Town",
+      url: "https://usaf.ac.za/wp-content/uploads/2023/08/University_of_Cape_Town-logo.webp",
+      height: "h-9"
+    },
+    {
+      name: "University of Pretoria",
+      url: "https://usaf.ac.za/wp-content/uploads/2023/08/University_of_Pretoria-logo.webp",
+      height: "h-8"
+    },
+    {
+      name: "University of Johannesburg",
+      url: "https://usaf.ac.za/wp-content/uploads/2023/08/University_of_Johannesburg-logo.webp",
+      height: "h-8"
+    },
+    {
+      name: "University of Stellenbosch",
+      url: "https://usaf.ac.za/wp-content/uploads/2023/08/University_of_Stellenbosch-logo.webp",
+      height: "h-8"
+    },
+    // Duplicate the array to create seamless loop
+    {
+      name: "University of the Witwatersrand",
+      url: "https://usaf.ac.za/wp-content/uploads/2023/08/University_of_Witwatersrand_logo.webp",
+      height: "h-9"
+    },
+    {
+      name: "University of the Free State",
+      url: "https://usaf.ac.za/wp-content/uploads/2023/08/University_of_the_Free_State-logo.webp",
+      height: "h-8"
+    },
+    {
+      name: "University of KwaZulu-Natal",
+      url: "https://usaf.ac.za/wp-content/uploads/2023/08/University_of_KwaZulu_Natal-logo.webp",
+      height: "h-8"
+    }
+  ];
+
   useEffect(() => {
     fetchOpportunities();
     fetchStats();
   }, []);
 
-const fetchOpportunities = async () => {
-  try {
-    setLoading(true);
-    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/opportunities`);
+  const fetchOpportunities = async () => {
+    try {
+      setLoading(true);
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/opportunities`);
 
-    if (!response.ok) {
-      throw new Error('Failed to fetch opportunities');
+      if (!response.ok) {
+        throw new Error('Failed to fetch opportunities');
+      }
+      
+      const data = await response.json();
+      
+      // Handle different possible data structures from your API
+      let opportunitiesArray = [];
+      
+      if (Array.isArray(data)) {
+        // API returns array directly: [...]
+        opportunitiesArray = data;
+      } else if (data && Array.isArray(data.opportunities)) {
+        // API returns object with opportunities property: { opportunities: [...] }
+        opportunitiesArray = data.opportunities;
+      } else if (data && Array.isArray(data.data)) {
+        // API returns object with data property: { data: [...] }
+        opportunitiesArray = data.data;
+      } else if (data && typeof data === 'object') {
+        // API returns single object, wrap in array
+        opportunitiesArray = [data];
+      } else {
+        console.warn('Unexpected data structure from API:', data);
+        opportunitiesArray = [];
+      }
+      
+      setOpportunities(opportunitiesArray);
+      
+    } catch (err) {
+      setError(err.message);
+      console.error('Error fetching opportunities:', err);
+      setOpportunities([]); // Reset to empty array on error
+    } finally {
+      setLoading(false);
     }
-    
-    const data = await response.json();
-    
-    // Handle different possible data structures from your API
-    let opportunitiesArray = [];
-    
-    if (Array.isArray(data)) {
-      // API returns array directly: [...]
-      opportunitiesArray = data;
-    } else if (data && Array.isArray(data.opportunities)) {
-      // API returns object with opportunities property: { opportunities: [...] }
-      opportunitiesArray = data.opportunities;
-    } else if (data && Array.isArray(data.data)) {
-      // API returns object with data property: { data: [...] }
-      opportunitiesArray = data.data;
-    } else if (data && typeof data === 'object') {
-      // API returns single object, wrap in array
-      opportunitiesArray = [data];
-    } else {
-      console.warn('Unexpected data structure from API:', data);
-      opportunitiesArray = [];
-    }
-    
-    setOpportunities(opportunitiesArray);
-    
-  } catch (err) {
-    setError(err.message);
-    console.error('Error fetching opportunities:', err);
-    setOpportunities([]); // Reset to empty array on error
-  } finally {
-    setLoading(false);
-  }
-};
-
-  // const fetchStats = async () => {
-  //   try {
-  //     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/stats`);
-  //     if (!response.ok) {
-  //       throw new Error('Failed to fetch stats');
-  //     }
-  //     const data = await response.json();
-  //     setStats(data);
-  //   } catch (err) {
-  //     console.error('Error fetching stats:', err);
-  //     // Set default stats if API fails
-  //     setStats([
-  //       { label: "Active Opportunities", value: "2,847", icon: TrendingUp, color: "text-emerald-600" },
-  //       { label: "Students Placed", value: "15,234", icon: Users, color: "text-slate-600" },
-  //       { label: "Partner Companies", value: "456", icon: Briefcase, color: "text-amber-600" },
-  //       { label: "Success Rate", value: "89%", icon: Star, color: "text-orange-600" }
-  //     ]);
-  //   }
-  // };
+  };
 
   const fetchStats = async () => {
-  // Hardcoded data for now
-  setStats([
-    { label: "Active Opportunities", value: "2,847", icon: TrendingUp, color: "text-emerald-600" },
-    { label: "Students Placed", value: "15,234", icon: Users, color: "text-slate-600" },
-    { label: "Partner Companies", value: "456", icon: Briefcase, color: "text-amber-600" },
-    { label: "Success Rate", value: "89%", icon: Star, color: "text-orange-600" }
-  ]);
-};
+    // Hardcoded data for now
+    setStats([
+      { label: "Active Opportunities", value: "2,847", icon: TrendingUp, color: "text-emerald-600" },
+      { label: "Students Placed", value: "15,234", icon: Users, color: "text-slate-600" },
+      { label: "Partner Companies", value: "456", icon: Briefcase, color: "text-amber-600" },
+      { label: "Success Rate", value: "89%", icon: Star, color: "text-orange-600" }
+    ]);
+  };
 
-
-const filteredOpportunities = Array.isArray(opportunities) 
-  ? (selectedCategory === 'all' 
-      ? opportunities 
-      : opportunities.filter(opp => opp.category === selectedCategory))
-  : [];
+  const filteredOpportunities = Array.isArray(opportunities) 
+    ? (selectedCategory === 'all' 
+        ? opportunities 
+        : opportunities.filter(opp => opp.category === selectedCategory))
+    : [];
 
   const handleNewsletterSignup = async () => {
     if (email.trim()) {
@@ -214,6 +243,47 @@ const filteredOpportunities = Array.isArray(opportunities)
                 Learn More
               </button>
             </div>
+
+            {/* University Logos Section - UPDATED with horizontal scrolling */}
+            <div className="mt-16 animate-in fade-in slide-in-from-bottom duration-1000 delay-600">
+              <p className="text-slate-300 mb-8 text-lg font-medium">Trusted by leading South African universities</p>
+              
+              <div className="relative overflow-hidden py-4">
+                {/* Gradient overlays for smooth edges */}
+                <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-slate-900 to-transparent z-10"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-slate-900 to-transparent z-10"></div>
+                
+                {/* Scrolling container */}
+                <div className="flex space-x-8 md:space-x-12 lg:space-x-16 animate-scroll">
+                  {universityLogos.map((uni, index) => (
+                    <div 
+                      key={`${uni.name}-${index}`}
+                      className="flex-shrink-0 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20 min-w-[140px] md:min-w-[160px]"
+                    >
+                      <img 
+                        src={uni.url}
+                        alt={uni.name}
+                        className={`${uni.height} w-auto max-w-[120px] md:max-w-[140px] opacity-90 hover:opacity-100 transition-opacity duration-300 object-contain`}
+                        loading="lazy"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          const fallbackElement = e.target.parentNode.querySelector('.university-fallback');
+                          if (fallbackElement) {
+                            fallbackElement.style.display = 'block';
+                          }
+                        }}
+                      />
+                      <div 
+                        className="hidden text-xs font-medium text-white text-center max-w-[80px] university-fallback"
+                        style={{display: 'none'}}
+                      >
+                        {uni.name.split(' ')[0]}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         
@@ -223,6 +293,7 @@ const filteredOpportunities = Array.isArray(opportunities)
         <div className="absolute top-1/2 right-1/4 w-4 h-4 bg-emerald-400/30 rounded-full"></div>
       </section>
 
+      {/* Rest of your existing code remains exactly the same */}
       {/* Stats Section */}
       <section className="py-16 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -443,6 +514,24 @@ const filteredOpportunities = Array.isArray(opportunities)
           </div>
         </div>
       </section>
+
+      {/* Add CSS for the scrolling animation */}
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-140px * 6));
+          }
+        }
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </main>
   );
 }
