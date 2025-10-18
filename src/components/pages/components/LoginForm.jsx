@@ -1,7 +1,9 @@
+
 // components/LoginForm.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -12,7 +14,18 @@ const LoginForm = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   
-  const { login } = useAuth();
+  const { user, login } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log('LoginForm - User state changed:', user);
+    
+    // If user becomes available, navigate to dashboard
+    if (user && user._id) {
+      console.log('Valid user detected, navigating to dashboard...');
+      navigate('/dashboard', { replace: true });
+    }
+  }, [user, navigate]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -21,7 +34,6 @@ const LoginForm = () => {
       [name]: value
     }));
     
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -54,7 +66,18 @@ const LoginForm = () => {
     
     setIsSubmitting(true);
     try {
-      await login(formData);
+      const result = await login(formData);
+      console.log('Login completed with result:', result);
+      
+      // If state doesn't update within 1 second, check localStorage and force navigation
+      setTimeout(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser && (!user || !user._id)) {
+          console.log('State not updated, but user found in localStorage. Forcing navigation...');
+          navigate('/dashboard', { replace: true });
+        }
+      }, 1000);
+      
     } catch (error) {
       setErrors({ submit: error.message });
     } finally {
@@ -164,7 +187,7 @@ const LoginForm = () => {
         <div className="rounded-md bg-red-50 p-4">
           <div className="flex">
             <div className="flex-shrink-0">
-              <X className="h-5 w-5 text-red-400" />
+              <span className="text-red-400">❌</span>
             </div>
             <div className="ml-3">
               <h3 className="text-sm font-medium text-red-800">
@@ -214,7 +237,7 @@ const LoginForm = () => {
         </div>
       </div>
     </form>
-  );
+  )
 };
 
 export default LoginForm;
