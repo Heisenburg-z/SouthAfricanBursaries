@@ -17,7 +17,8 @@ import {
   Home,
   Percent
 } from 'lucide-react';
-
+import SuccessNotification from './components/SuccessNotification.jsx';
+import ApplyModal from './components/ApplyModal.jsx';
 function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [email, setEmail] = useState('');
@@ -25,6 +26,10 @@ function HomePage() {
   const [stats, setStats] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedOpportunity, setSelectedOpportunity] = useState(null);
+const [showApplyModal, setShowApplyModal] = useState(false);
+const [user, setUser] = useState(null);
+const [showSuccess, setShowSuccess] = useState(false);
 
   const categories = [
     { id: 'all', name: 'All Opportunities', icon: Search },
@@ -130,6 +135,84 @@ function HomePage() {
       setLoading(false);
     }
   };
+useEffect(() => {
+  checkAuth();
+}, []);
+
+const checkAuth = () => {
+  const token = localStorage.getItem('token');
+  const userData = localStorage.getItem('user');
+  if (token && userData) {
+    setUser(JSON.parse(userData));
+  }
+};
+
+// Add this function to handle application submission
+const handleApply = async (applicationData) => {
+  try {
+    const token = localStorage.getItem('token');
+    
+    if (!token) {
+      alert('Please log in to apply for opportunities');
+      // Redirect to login page or show login modal
+      return;
+    }
+
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/applications`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify(applicationData)
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Failed to submit application');
+    }
+
+    const result = await response.json();
+    
+    // Show success message
+    alert('Application submitted successfully! You can track your application in your dashboard.');
+    
+    
+    // Refresh opportunities to update application counts
+    fetchOpportunities();
+    
+    return result;
+  } catch (error) {
+    console.error('Error submitting application:', error);
+    throw error;
+  }
+};
+
+// Add this function to open apply modal
+const openApplyModal = (opportunity) => {
+  // Check if user is logged in
+  const token = localStorage.getItem('token');
+  const userData = localStorage.getItem('user');
+  
+  if (!token || !userData) {
+    alert('Please log in to apply for opportunities');
+    // Redirect to login page
+    window.location.href = '/login';
+    return;
+  }
+
+  // Check if application deadline has passed
+  if (new Date(opportunity.applicationDeadline) < new Date()) {
+    alert('Sorry, the application deadline for this opportunity has passed.');
+    return;
+  }
+
+  // Store the opportunity in localStorage or sessionStorage to pass to dashboard
+  sessionStorage.setItem('selectedOpportunity', JSON.stringify(opportunity));
+  
+  // Redirect to dashboard applications tab
+  window.location.href = '/dashboard#applications';
+};
 
   const fetchStats = async () => {
     // Hardcoded data for now
@@ -415,7 +498,10 @@ function HomePage() {
                     </div>
 
                     {/* Apply Button */}
-                    <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 shadow-md hover:shadow-lg">
+                    <button 
+                      onClick={() => openApplyModal(opportunity)}
+                      className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 shadow-md hover:shadow-lg"
+                    >
                       <span>Apply Now</span>
                       <ExternalLink className="h-4 w-4" />
                     </button>
@@ -514,7 +600,17 @@ function HomePage() {
           </div>
         </div>
       </section>
-
+{showApplyModal && selectedOpportunity && (
+  <ApplyModal
+    opportunity={selectedOpportunity}
+    isOpen={showApplyModal}
+    onClose={() => {
+      setShowApplyModal(false);
+      setSelectedOpportunity(null);
+    }}
+    onSubmit={handleApply}
+  />
+)}
       {/* Add CSS for the scrolling animation */}
       <style jsx>{`
         @keyframes scroll {

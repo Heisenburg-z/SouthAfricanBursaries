@@ -20,6 +20,8 @@ import {
   ExternalLink
 } from 'lucide-react';
 import ProfileUpdate from './components/ProfileUpdate.jsx';
+import ApplicationsTab from './components/ApplicationsTab';
+
 function StudentDashboard() {
   const [activeTab, setActiveTab] = useState('overview');
   const [userData, setUserData] = useState(null);
@@ -153,6 +155,230 @@ function StudentDashboard() {
   const handleLogout = () => {
     localStorage.removeItem('token');
     window.location.href = '/login';
+  };
+
+  // Render tab content based on active tab
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case 'overview':
+        return (
+          <div className="lg:col-span-2 space-y-6">
+            {/* Applications Section */}
+            <div className="bg-white rounded-xl shadow-sm p-6">
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-xl font-semibold text-slate-900">Recent Applications</h2>
+                <button className="text-emerald-600 hover:text-emerald-700 font-medium text-sm transition-colors">
+                  View All
+                </button>
+              </div>
+
+              <div className="space-y-4">
+                {applications.length > 0 ? (
+                  applications.slice(0, 5).map((application) => {
+                    const CategoryIcon = getCategoryIcon(application.opportunity?.category);
+                    return (
+                      <div key={application._id} className="flex items-center justify-between p-4 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors duration-300">
+                        <div className="flex items-center space-x-4">
+                          <div className={`p-3 rounded-lg ${
+                            application.opportunity?.category === 'bursary' ? 'bg-emerald-100 text-emerald-800' :
+                            application.opportunity?.category === 'internship' ? 'bg-slate-100 text-slate-800' :
+                            application.opportunity?.category === 'graduate' ? 'bg-amber-100 text-amber-800' :
+                            'bg-orange-100 text-orange-800'
+                          }`}>
+                            <CategoryIcon className="h-5 w-5" />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <h3 className="font-medium text-slate-900 truncate">{application.opportunity?.title || 'Unknown Opportunity'}</h3>
+                            <p className="text-sm text-slate-600 truncate">{application.opportunity?.provider || 'Unknown Provider'}</p>
+                            <p className="text-xs text-slate-500">Applied on {formatDate(application.applicationDate)}</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-4">
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(application.status)}`}>
+                            {application.status}
+                          </span>
+                          <button className="text-slate-400 hover:text-slate-600 transition-colors">
+                            <ExternalLink className="h-4 w-4" />
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <div className="text-center py-8">
+                    <FileText className="h-12 w-12 text-slate-300 mx-auto mb-4" />
+                    <p className="text-slate-500 mb-2">No applications yet</p>
+                    <p className="text-sm text-slate-400 mb-4">Start applying to opportunities to see them here</p>
+                    <button className="text-emerald-600 hover:text-emerald-700 font-medium text-sm">
+                      Browse Opportunities
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Upcoming Deadlines */}
+            <div className="bg-white rounded-xl shadow-sm p-6">
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-xl font-semibold text-slate-900">Upcoming Deadlines</h2>
+                <button className="text-emerald-600 hover:text-emerald-700 font-medium text-sm transition-colors">
+                  View Calendar
+                </button>
+              </div>
+
+              <div className="space-y-4">
+                {upcomingDeadlines.length > 0 ? (
+                  upcomingDeadlines.slice(0, 5).map((opportunity) => {
+                    const daysLeft = calculateDaysLeft(opportunity.applicationDeadline);
+                    return (
+                      <div key={opportunity._id} className="flex items-center justify-between p-4 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors duration-300">
+                        <div className="min-w-0 flex-1">
+                          <h3 className="font-medium text-slate-900 truncate">{opportunity.title}</h3>
+                          <p className="text-sm text-slate-600">Due on {formatDate(opportunity.applicationDeadline)}</p>
+                        </div>
+                        <div className="flex items-center">
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                            daysLeft <= 7 
+                              ? 'bg-red-100 text-red-800' 
+                              : daysLeft <= 14
+                              ? 'bg-amber-100 text-amber-800'
+                              : 'bg-emerald-100 text-emerald-800'
+                          }`}>
+                            {daysLeft} {daysLeft === 1 ? 'day' : 'days'} left
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <div className="text-center py-8">
+                    <Calendar className="h-12 w-12 text-slate-300 mx-auto mb-4" />
+                    <p className="text-slate-500 mb-2">No upcoming deadlines</p>
+                    <p className="text-sm text-slate-400">Check back later for new opportunities</p>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Recommended Opportunities */}
+            <div className="bg-white rounded-xl shadow-sm p-6">
+              <div className="flex justify-between items-center mb-6">
+                <h2 className="text-xl font-semibold text-slate-900">Recommended for You</h2>
+                <button className="text-emerald-600 hover:text-emerald-700 font-medium text-sm transition-colors">
+                  Browse More
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* These could be fetched from your API in the future */}
+                <div className="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300 cursor-pointer">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className={`px-2 py-1 bg-emerald-100 text-emerald-800 text-xs font-medium rounded-full`}>
+                      BURSARY
+                    </div>
+                    <Award className="h-5 w-5 text-emerald-600" />
+                  </div>
+                  <h3 className="font-medium text-slate-900 mb-2">Sasol Bursary Programme 2024</h3>
+                  <p className="text-sm text-slate-600 mb-3">For Engineering and Science students</p>
+                  <div className="flex items-center text-xs text-slate-500">
+                    <Calendar className="h-3 w-3 mr-1" />
+                    <span>Closes in 12 days</span>
+                  </div>
+                </div>
+
+                <div className="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300 cursor-pointer">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className={`px-2 py-1 bg-slate-100 text-slate-800 text-xs font-medium rounded-full`}>
+                      INTERNSHIP
+                    </div>
+                    <Briefcase className="h-5 w-5 text-slate-600" />
+                  </div>
+                  <h3 className="font-medium text-slate-900 mb-2">Google Software Engineering Intern</h3>
+                  <p className="text-sm text-slate-600 mb-3">For final year Computer Science students</p>
+                  <div className="flex items-center text-xs text-slate-500">
+                    <Calendar className="h-3 w-3 mr-1" />
+                    <span>Closes in 21 days</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      case 'applications':
+        return <ApplicationsTab />;
+
+      case 'profile':
+        return (
+          <div className="lg:col-span-2 space-y-6">
+            <div className="bg-white rounded-xl shadow-sm p-6">
+              <h2 className="text-xl font-semibold text-slate-900 mb-6">Profile Information</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="text-lg font-medium text-slate-800 mb-4">Personal Information</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <label className="text-sm font-medium text-slate-600">Full Name</label>
+                      <p className="text-slate-900">{userData?.firstName} {userData?.lastName}</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-slate-600">Email</label>
+                      <p className="text-slate-900">{userData?.email}</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-slate-600">Phone</label>
+                      <p className="text-slate-900">{userData?.phoneNumber || 'Not provided'}</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-lg font-medium text-slate-800 mb-4">Education Information</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <label className="text-sm font-medium text-slate-600">Institution</label>
+                      <p className="text-slate-900">{userData?.education?.institution || 'Not specified'}</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-slate-600">Qualification</label>
+                      <p className="text-slate-900">{userData?.education?.qualification || 'Not specified'}</p>
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium text-slate-600">Year of Study</label>
+                      <p className="text-slate-900">{userData?.education?.yearOfStudy || 'Not specified'}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button 
+                onClick={() => setShowProfileUpdate(true)}
+                className="mt-6 bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-4 rounded-lg font-medium transition-colors duration-300"
+              >
+                Edit Profile
+              </button>
+            </div>
+          </div>
+        );
+
+      case 'documents':
+        return (
+          <div className="lg:col-span-2 space-y-6">
+            <div className="bg-white rounded-xl shadow-sm p-6">
+              <h2 className="text-xl font-semibold text-slate-900 mb-6">My Documents</h2>
+              <div className="text-center py-12">
+                <FileText className="h-16 w-16 text-slate-300 mx-auto mb-4" />
+                <h3 className="text-lg font-medium text-slate-700 mb-2">No documents uploaded yet</h3>
+                <p className="text-slate-500 mb-6">Upload your CV, transcripts, and other important documents to complete your profile.</p>
+                <button className="bg-emerald-600 hover:bg-emerald-700 text-white py-2 px-6 rounded-lg font-medium transition-colors duration-300">
+                  Upload Documents
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+
+      default:
+        return null;
+    }
   };
 
   if (loading) {
@@ -371,168 +597,24 @@ function StudentDashboard() {
             </div>
           </div>
 
-          {/* Main Content - Applications & Deadlines */}
-          <div className="lg:col-span-2 space-y-6">
-            {/* Applications Section */}
-            <div className="bg-white rounded-xl shadow-sm p-6">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-semibold text-slate-900">Recent Applications</h2>
-                <button className="text-emerald-600 hover:text-emerald-700 font-medium text-sm transition-colors">
-                  View All
-                </button>
-              </div>
-
-              <div className="space-y-4">
-                {applications.length > 0 ? (
-                  applications.slice(0, 5).map((application) => {
-                    const CategoryIcon = getCategoryIcon(application.opportunity?.category);
-                    return (
-                      <div key={application._id} className="flex items-center justify-between p-4 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors duration-300">
-                        <div className="flex items-center space-x-4">
-                          <div className={`p-3 rounded-lg ${
-                            application.opportunity?.category === 'bursary' ? 'bg-emerald-100 text-emerald-800' :
-                            application.opportunity?.category === 'internship' ? 'bg-slate-100 text-slate-800' :
-                            application.opportunity?.category === 'graduate' ? 'bg-amber-100 text-amber-800' :
-                            'bg-orange-100 text-orange-800'
-                          }`}>
-                            <CategoryIcon className="h-5 w-5" />
-                          </div>
-                          <div className="min-w-0 flex-1">
-                            <h3 className="font-medium text-slate-900 truncate">{application.opportunity?.title || 'Unknown Opportunity'}</h3>
-                            <p className="text-sm text-slate-600 truncate">{application.opportunity?.provider || 'Unknown Provider'}</p>
-                            <p className="text-xs text-slate-500">Applied on {formatDate(application.applicationDate)}</p>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-4">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(application.status)}`}>
-                            {application.status}
-                          </span>
-                          <button className="text-slate-400 hover:text-slate-600 transition-colors">
-                            <ExternalLink className="h-4 w-4" />
-                          </button>
-                        </div>
-                      </div>
-                    );
-                  })
-                ) : (
-                  <div className="text-center py-8">
-                    <FileText className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-                    <p className="text-slate-500 mb-2">No applications yet</p>
-                    <p className="text-sm text-slate-400 mb-4">Start applying to opportunities to see them here</p>
-                    <button className="text-emerald-600 hover:text-emerald-700 font-medium text-sm">
-                      Browse Opportunities
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Upcoming Deadlines */}
-            <div className="bg-white rounded-xl shadow-sm p-6">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-semibold text-slate-900">Upcoming Deadlines</h2>
-                <button className="text-emerald-600 hover:text-emerald-700 font-medium text-sm transition-colors">
-                  View Calendar
-                </button>
-              </div>
-
-              <div className="space-y-4">
-                {upcomingDeadlines.length > 0 ? (
-                  upcomingDeadlines.slice(0, 5).map((opportunity) => {
-                    const daysLeft = calculateDaysLeft(opportunity.applicationDeadline);
-                    return (
-                      <div key={opportunity._id} className="flex items-center justify-between p-4 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors duration-300">
-                        <div className="min-w-0 flex-1">
-                          <h3 className="font-medium text-slate-900 truncate">{opportunity.title}</h3>
-                          <p className="text-sm text-slate-600">Due on {formatDate(opportunity.applicationDeadline)}</p>
-                        </div>
-                        <div className="flex items-center">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                            daysLeft <= 7 
-                              ? 'bg-red-100 text-red-800' 
-                              : daysLeft <= 14
-                              ? 'bg-amber-100 text-amber-800'
-                              : 'bg-emerald-100 text-emerald-800'
-                          }`}>
-                            {daysLeft} {daysLeft === 1 ? 'day' : 'days'} left
-                          </span>
-                        </div>
-                      </div>
-                    );
-                  })
-                ) : (
-                  <div className="text-center py-8">
-                    <Calendar className="h-12 w-12 text-slate-300 mx-auto mb-4" />
-                    <p className="text-slate-500 mb-2">No upcoming deadlines</p>
-                    <p className="text-sm text-slate-400">Check back later for new opportunities</p>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Recommended Opportunities */}
-            <div className="bg-white rounded-xl shadow-sm p-6">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-semibold text-slate-900">Recommended for You</h2>
-                <button className="text-emerald-600 hover:text-emerald-700 font-medium text-sm transition-colors">
-                  Browse More
-                </button>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* These could be fetched from your API in the future */}
-                <div className="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300 cursor-pointer">
-                  <div className="flex items-start justify-between mb-3">
-                    <div className={`px-2 py-1 bg-emerald-100 text-emerald-800 text-xs font-medium rounded-full`}>
-                      BURSARY
-                    </div>
-                    <Award className="h-5 w-5 text-emerald-600" />
-                  </div>
-                  <h3 className="font-medium text-slate-900 mb-2">Sasol Bursary Programme 2024</h3>
-                  <p className="text-sm text-slate-600 mb-3">For Engineering and Science students</p>
-                  <div className="flex items-center text-xs text-slate-500">
-                    <Calendar className="h-3 w-3 mr-1" />
-                    <span>Closes in 12 days</span>
-                  </div>
-                </div>
-
-                <div className="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow duration-300 cursor-pointer">
-                  <div className="flex items-start justify-between mb-3">
-                    <div className={`px-2 py-1 bg-slate-100 text-slate-800 text-xs font-medium rounded-full`}>
-                      INTERNSHIP
-                    </div>
-                    <Briefcase className="h-5 w-5 text-slate-600" />
-                  </div>
-                  <h3 className="font-medium text-slate-900 mb-2">Google Software Engineering Intern</h3>
-                  <p className="text-sm text-slate-600 mb-3">For final year Computer Science students</p>
-                  <div className="flex items-center text-xs text-slate-500">
-                    <Calendar className="h-3 w-3 mr-1" />
-                    <span>Closes in 21 days</span>
-                  </div>
-
-
-
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Main Content - Dynamic based on active tab */}
+          {renderTabContent()}
         </div>
       </div>
+
       {/* Profile Update Modal */}
-{showProfileUpdate && (
-  <ProfileUpdate
-    userData={userData}
-    onProfileUpdate={(updatedUser) => {
-      setUserData(updatedUser);
-      setShowProfileUpdate(false);
-    }}
-    onClose={() => setShowProfileUpdate(false)}
-  />
-)}
+      {showProfileUpdate && (
+        <ProfileUpdate
+          userData={userData}
+          onProfileUpdate={(updatedUser) => {
+            setUserData(updatedUser);
+            setShowProfileUpdate(false);
+          }}
+          onClose={() => setShowProfileUpdate(false)}
+        />
+      )}
     </div>
-
-
-);
+  );
 }
 
 export default StudentDashboard;
