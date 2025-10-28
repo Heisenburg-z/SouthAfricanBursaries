@@ -1,0 +1,2842 @@
+[
+  {
+    "title": "Sasol Engineering & Science Bursary 2026",
+    "description": "Comprehensive bursary programme for Engineering studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "Engineering",
+    "provider": "Sasol",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Engineering"
+      ],
+      "minimumAverage": "70%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-01-26T20:36:26.869996Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.sasolbursaries.com"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "bursaries@sasol.com",
+      "phone": "0860 106 235",
+      "website": "https://www.sasolbursaries.com"
+    },
+    "location": "National",
+    "rating": 4.5,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870007Z",
+    "updatedAt": "2025-09-28T20:36:26.870009Z"
+  },
+  {
+    "title": "Standard Bank Bursary Fund 2026",
+    "description": "Comprehensive bursary programme for Multiple Fields studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "Multiple Fields",
+    "provider": "Standard Bank Group",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Multiple Fields"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-02-25T20:36:26.870013Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.standardbank.com/bursaries"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "bursaries@standardbank.co.za",
+      "phone": "011 636 9111",
+      "website": "https://www.standardbank.com/bursaries"
+    },
+    "location": "National",
+    "rating": 4.6,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870014Z",
+    "updatedAt": "2025-09-28T20:36:26.870015Z"
+  },
+  {
+    "title": "Old Mutual Imfundo Trust 2025",
+    "description": "Comprehensive bursary programme for Accounting studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "Accounting",
+    "provider": "Old Mutual",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Accounting"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-03-27T20:36:26.870017Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.oldmutual.co.za/bursaries"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "imfundo@oldmutual.com",
+      "phone": "0860 653 688",
+      "website": "https://www.oldmutual.co.za/bursaries"
+    },
+    "location": "National",
+    "rating": 4.7,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870018Z",
+    "updatedAt": "2025-09-28T20:36:26.870019Z"
+  },
+  {
+    "title": "Funza Lushaka Programme 2026",
+    "description": "Comprehensive bursary programme for Education studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "Education",
+    "provider": "Department of Basic Education",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Education"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-04-26T20:36:26.870021Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://funzalushaka.doe.gov.za"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "funzalushaka@dbe.gov.za",
+      "phone": "0800 202 933",
+      "website": "https://funzalushaka.doe.gov.za"
+    },
+    "location": "National",
+    "rating": 4.8,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870022Z",
+    "updatedAt": "2025-09-28T20:36:26.870023Z"
+  },
+  {
+    "title": "JSE Bursary 2026",
+    "description": "Comprehensive bursary programme for Finance studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "Finance",
+    "provider": "JSE",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Finance"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-05-26T20:36:26.870025Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.jse.co.za/bursaries"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "bursaries@jse.co.za",
+      "phone": "011 520 7000",
+      "website": "https://www.jse.co.za/bursaries"
+    },
+    "location": "Johannesburg",
+    "rating": 4.9,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870026Z",
+    "updatedAt": "2025-09-28T20:36:26.870027Z"
+  },
+  {
+    "title": "IDC Bursary 2026",
+    "description": "Comprehensive bursary programme for Engineering studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "Engineering",
+    "provider": "IDC",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Engineering"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-06-25T20:36:26.870028Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.idc.co.za/bursaries"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "bursaries@idc.co.za",
+      "phone": "011 269 3374",
+      "website": "https://www.idc.co.za/bursaries"
+    },
+    "location": "National",
+    "rating": 4.5,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870030Z",
+    "updatedAt": "2025-09-28T20:36:26.870030Z"
+  },
+  {
+    "title": "FNB Bursary 2026",
+    "description": "Comprehensive bursary programme for Finance and IT studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "Finance and IT",
+    "provider": "FNB",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Finance and IT"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-01-26T20:36:26.870032Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.fnb.co.za/careers/bursaries"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "bursaries@fnb.co.za",
+      "phone": "087 575 9405",
+      "website": "https://www.fnb.co.za/careers/bursaries"
+    },
+    "location": "National",
+    "rating": 4.6,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870033Z",
+    "updatedAt": "2025-09-28T20:36:26.870034Z"
+  },
+  {
+    "title": "Nedbank Bursary 2026",
+    "description": "Comprehensive bursary programme for Banking studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "Banking",
+    "provider": "Nedbank",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Banking"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-02-25T20:36:26.870035Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.nedbank.co.za/bursaries"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "bursaries@nedbank.co.za",
+      "phone": "0860 555 111",
+      "website": "https://www.nedbank.co.za/bursaries"
+    },
+    "location": "National",
+    "rating": 4.7,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870038Z",
+    "updatedAt": "2025-09-28T20:36:26.870039Z"
+  },
+  {
+    "title": "Absa Bursary 2026",
+    "description": "Comprehensive bursary programme for Finance studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "Finance",
+    "provider": "Absa",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Finance"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-03-27T20:36:26.870040Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.absa.co.za/careers/bursaries"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "bursaries@absa.co.za",
+      "phone": "0860 008 600",
+      "website": "https://www.absa.co.za/careers/bursaries"
+    },
+    "location": "National",
+    "rating": 4.8,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870041Z",
+    "updatedAt": "2025-09-28T20:36:26.870042Z"
+  },
+  {
+    "title": "MTN Bursary 2026",
+    "description": "Comprehensive bursary programme for Engineering studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "Engineering",
+    "provider": "MTN",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Engineering"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-04-26T20:36:26.870044Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.mtn.co.za/bursaries"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "bursaries@mtn.com",
+      "phone": "083 123",
+      "website": "https://www.mtn.co.za/bursaries"
+    },
+    "location": "National",
+    "rating": 4.9,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870045Z",
+    "updatedAt": "2025-09-28T20:36:26.870046Z"
+  },
+  {
+    "title": "Vodacom Bursary 2026",
+    "description": "Comprehensive bursary programme for Engineering and IT studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "Engineering and IT",
+    "provider": "Vodacom",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Engineering and IT"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-05-26T20:36:26.870047Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.vodacom.co.za/careers/bursaries"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "bursaries@vodacom.co.za",
+      "phone": "082 1940",
+      "website": "https://www.vodacom.co.za/careers/bursaries"
+    },
+    "location": "National",
+    "rating": 4.5,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870048Z",
+    "updatedAt": "2025-09-28T20:36:26.870049Z"
+  },
+  {
+    "title": "Eskom Bursary 2026",
+    "description": "Comprehensive bursary programme for Engineering studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "Engineering",
+    "provider": "Eskom",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Engineering"
+      ],
+      "minimumAverage": "70%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-06-25T20:36:26.870051Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.eskom.co.za/bursaries"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "bursaries@eskom.co.za",
+      "phone": "0860 037 566",
+      "website": "https://www.eskom.co.za/bursaries"
+    },
+    "location": "National",
+    "rating": 4.6,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870052Z",
+    "updatedAt": "2025-09-28T20:36:26.870052Z"
+  },
+  {
+    "title": "Transnet Bursary 2026",
+    "description": "Comprehensive bursary programme for Engineering studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "Engineering",
+    "provider": "Transnet",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Engineering"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-01-26T20:36:26.870054Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.transnet.net/careers/bursaries"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "bursaries@transnet.net",
+      "phone": "0860 864 331",
+      "website": "https://www.transnet.net/careers/bursaries"
+    },
+    "location": "National",
+    "rating": 4.7,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870055Z",
+    "updatedAt": "2025-09-28T20:36:26.870056Z"
+  },
+  {
+    "title": "Anglo American Bursary 2026",
+    "description": "Comprehensive bursary programme for Mining studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "Mining",
+    "provider": "Anglo American",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Mining"
+      ],
+      "minimumAverage": "70%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-02-25T20:36:26.870057Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.angloamerican.com/careers/bursaries"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "bursaries.sa@angloamerican.com",
+      "phone": "011 638 9111",
+      "website": "https://www.angloamerican.com/careers/bursaries"
+    },
+    "location": "National",
+    "rating": 4.8,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870058Z",
+    "updatedAt": "2025-09-28T20:36:26.870059Z"
+  },
+  {
+    "title": "Sasol Foundation STEM 2026",
+    "description": "Comprehensive bursary programme for STEM studies with full financial support including tuition, accommodation, and living allowance.",
+    "category": "bursary",
+    "field": "STEM",
+    "provider": "Sasol Foundation",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 30,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "STEM"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Strong academic record and leadership potential"
+    },
+    "funding": {
+      "tuition": "Full tuition coverage",
+      "accommodation": "Provided or allowance",
+      "allowance": "Monthly living stipend"
+    },
+    "applicationDeadline": "2026-03-27T20:36:26.870060Z",
+    "applicationProcess": "Online application, assessment, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.sasolbursaries.com/foundation"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Proof of Registration",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "foundation@sasol.com",
+      "phone": "0860 106 235",
+      "website": "https://www.sasolbursaries.com/foundation"
+    },
+    "location": "National",
+    "rating": 4.9,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870061Z",
+    "updatedAt": "2025-09-28T20:36:26.870062Z"
+  },
+  {
+    "title": "Deloitte Graduate Programme 2026",
+    "description": "Graduate programme in Accounting with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "Accounting",
+    "provider": "Deloitte",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "Accounting"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2025-12-27T20:36:26.870064Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://careers.deloitte.co.za"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "graduates@deloitte.co.za",
+      "phone": "011 806 5000",
+      "website": "https://careers.deloitte.co.za"
+    },
+    "location": "Multiple Locations",
+    "rating": 4.5,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870066Z",
+    "updatedAt": "2025-09-28T20:36:26.870067Z"
+  },
+  {
+    "title": "KPMG Training Contract 2026",
+    "description": "Graduate programme in Auditing with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "Auditing",
+    "provider": "KPMG",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "Auditing"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2026-01-26T20:36:26.870068Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://kpmg.com/za/careers/graduates"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "graduates@kpmg.co.za",
+      "phone": "011 647 7111",
+      "website": "https://kpmg.com/za/careers/graduates"
+    },
+    "location": "National",
+    "rating": 4.6,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870069Z",
+    "updatedAt": "2025-09-28T20:36:26.870070Z"
+  },
+  {
+    "title": "PwC Graduate Programme 2026",
+    "description": "Graduate programme in Professional Services with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "Professional Services",
+    "provider": "PwC",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "Professional Services"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2026-02-25T20:36:26.870072Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.pwc.co.za/careers/graduates"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "za_graduates@pwc.com",
+      "phone": "011 797 4000",
+      "website": "https://www.pwc.co.za/careers/graduates"
+    },
+    "location": "Multiple Locations",
+    "rating": 4.7,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870073Z",
+    "updatedAt": "2025-09-28T20:36:26.870074Z"
+  },
+  {
+    "title": "Standard Bank Graduate 2026",
+    "description": "Graduate programme in Banking with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "Banking",
+    "provider": "Standard Bank",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "Banking"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2026-03-27T20:36:26.870075Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.standardbank.com/careers/graduates"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "graduates@standardbank.co.za",
+      "phone": "011 636 9111",
+      "website": "https://www.standardbank.com/careers/graduates"
+    },
+    "location": "Johannesburg",
+    "rating": 4.8,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870076Z",
+    "updatedAt": "2025-09-28T20:36:26.870077Z"
+  },
+  {
+    "title": "Nedbank Young Analyst 2026",
+    "description": "Graduate programme in Analytics with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "Analytics",
+    "provider": "Nedbank",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "Analytics"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2026-04-26T20:36:26.870078Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.nedbank.co.za/careers/graduates"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "graduates@nedbank.co.za",
+      "phone": "0860 555 111",
+      "website": "https://www.nedbank.co.za/careers/graduates"
+    },
+    "location": "Johannesburg",
+    "rating": 4.9,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870079Z",
+    "updatedAt": "2025-09-28T20:36:26.870080Z"
+  },
+  {
+    "title": "RMB Graduate Programme 2026",
+    "description": "Graduate programme in Investment Banking with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "Investment Banking",
+    "provider": "RMB",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "Investment Banking"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2025-12-27T20:36:26.870082Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.rmb.co.za/graduate-programme"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "graduates@rmb.co.za",
+      "phone": "011 282 8000",
+      "website": "https://www.rmb.co.za/graduate-programme"
+    },
+    "location": "Sandton",
+    "rating": 4.5,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870083Z",
+    "updatedAt": "2025-09-28T20:36:26.870083Z"
+  },
+  {
+    "title": "FNB Future League 2026",
+    "description": "Graduate programme in Banking with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "Banking",
+    "provider": "FNB",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "Banking"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2026-01-26T20:36:26.870085Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.fnb.co.za/careers/graduates"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "futureleague@fnb.co.za",
+      "phone": "087 575 9405",
+      "website": "https://www.fnb.co.za/careers/graduates"
+    },
+    "location": "National",
+    "rating": 4.6,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870086Z",
+    "updatedAt": "2025-09-28T20:36:26.870087Z"
+  },
+  {
+    "title": "BMW Graduate Programme 2026",
+    "description": "Graduate programme in Automotive with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "Automotive",
+    "provider": "BMW",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "Automotive"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2026-02-25T20:36:26.870088Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.bmw.co.za/careers/graduates"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "graduates@bmw.co.za",
+      "phone": "012 677 9111",
+      "website": "https://www.bmw.co.za/careers/graduates"
+    },
+    "location": "Gauteng",
+    "rating": 4.7,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870089Z",
+    "updatedAt": "2025-09-28T20:36:26.870090Z"
+  },
+  {
+    "title": "Heineken Management Trainee 2025",
+    "description": "Graduate programme in FMCG with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "FMCG",
+    "provider": "Heineken",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "FMCG"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2026-03-27T20:36:26.870091Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.heinekenbeverages.co.za/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "graduates@heineken.co.za",
+      "phone": "011 340 0000",
+      "website": "https://www.heinekenbeverages.co.za/careers"
+    },
+    "location": "National",
+    "rating": 4.8,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870092Z",
+    "updatedAt": "2025-09-28T20:36:26.870093Z"
+  },
+  {
+    "title": "Anglo American Graduate 2026",
+    "description": "Graduate programme in Mining with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "Mining",
+    "provider": "Anglo American",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "Mining"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2026-04-26T20:36:26.870094Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.angloamerican.com/careers/graduates"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "graduates.sa@angloamerican.com",
+      "phone": "011 638 9111",
+      "website": "https://www.angloamerican.com/careers/graduates"
+    },
+    "location": "National",
+    "rating": 4.9,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870095Z",
+    "updatedAt": "2025-09-28T20:36:26.870096Z"
+  },
+  {
+    "title": "Sasol Graduate Development 2026",
+    "description": "Graduate programme in Energy with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "Energy",
+    "provider": "Sasol",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "Energy"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2025-12-27T20:36:26.870098Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.sasol.com/careers/graduates"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "graduates@sasol.com",
+      "phone": "011 441 3111",
+      "website": "https://www.sasol.com/careers/graduates"
+    },
+    "location": "Gauteng",
+    "rating": 4.5,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870099Z",
+    "updatedAt": "2025-09-28T20:36:26.870100Z"
+  },
+  {
+    "title": "Bidvest Graduate 2026",
+    "description": "Graduate programme in Multiple with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "Multiple",
+    "provider": "Bidvest",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "Multiple"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2026-01-26T20:36:26.870101Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.bidvest.co.za/careers/graduates"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "graduates@bidvest.co.za",
+      "phone": "011 772 8700",
+      "website": "https://www.bidvest.co.za/careers/graduates"
+    },
+    "location": "National",
+    "rating": 4.6,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870102Z",
+    "updatedAt": "2025-09-28T20:36:26.870103Z"
+  },
+  {
+    "title": "Clicks Graduate 2026",
+    "description": "Graduate programme in Retail with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "Retail",
+    "provider": "Clicks",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "Retail"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2026-02-25T20:36:26.870104Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.clicks.co.za/careers/graduates"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "graduates@clicks.co.za",
+      "phone": "021 460 1911",
+      "website": "https://www.clicks.co.za/careers/graduates"
+    },
+    "location": "National",
+    "rating": 4.7,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870105Z",
+    "updatedAt": "2025-09-28T20:36:26.870106Z"
+  },
+  {
+    "title": "Woolworths Graduate 2026",
+    "description": "Graduate programme in Retail with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "Retail",
+    "provider": "Woolworths",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "Retail"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2026-03-27T20:36:26.870107Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.woolworthsholdings.co.za/careers/graduates"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "graduates@woolworths.co.za",
+      "phone": "021 407 9111",
+      "website": "https://www.woolworthsholdings.co.za/careers/graduates"
+    },
+    "location": "Cape Town",
+    "rating": 4.8,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870108Z",
+    "updatedAt": "2025-09-28T20:36:26.870109Z"
+  },
+  {
+    "title": "BBD Graduate 2025",
+    "description": "Graduate programme in IT with professional development, training, and career advancement opportunities.",
+    "category": "graduate",
+    "field": "IT",
+    "provider": "BBD",
+    "eligibility": {
+      "minAge": 21,
+      "maxAge": 27,
+      "requiredEducation": "Bachelor's Degree",
+      "requiredFields": [
+        "IT"
+      ],
+      "minimumAverage": "65%",
+      "citizenship": [
+        "South African",
+        "Permanent Resident"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Recent graduate with strong academic record"
+    },
+    "funding": {
+      "tuition": "Study support if applicable",
+      "accommodation": "Relocation assistance",
+      "allowance": "Market-related salary"
+    },
+    "applicationDeadline": "2026-04-26T20:36:26.870111Z",
+    "applicationProcess": "Online application, psychometric testing, assessment centre, and interviews.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.bbd.co.za/careers/graduates"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Degree Certificate",
+      "Motivation Letter"
+    ],
+    "contactInfo": {
+      "email": "graduates@bbd.co.za",
+      "phone": "011 274 2000",
+      "website": "https://www.bbd.co.za/careers/graduates"
+    },
+    "location": "Gauteng",
+    "rating": 4.9,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870112Z",
+    "updatedAt": "2025-09-28T20:36:26.870113Z"
+  },
+  {
+    "title": "Allan Gray Internship 2025",
+    "description": "Internship programme in Finance providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Finance",
+    "provider": "Allan Gray",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Finance"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2025-11-27T20:36:26.870115Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.allangray.co.za/careers/internships"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "internships@allangray.co.za",
+      "phone": "021 415 2301",
+      "website": "https://www.allangray.co.za/careers/internships"
+    },
+    "location": "Cape Town",
+    "rating": 4.2,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870116Z",
+    "updatedAt": "2025-09-28T20:36:26.870117Z"
+  },
+  {
+    "title": "Baker Hughes Manufacturing Intern",
+    "description": "Internship programme in Engineering providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Engineering",
+    "provider": "Baker Hughes",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Engineering"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2025-12-27T20:36:26.870118Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://careers.bakerhughes.com"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "internships.sa@bakerhughes.com",
+      "phone": "011 451 5000",
+      "website": "https://careers.bakerhughes.com"
+    },
+    "location": "Midrand",
+    "rating": 4.3,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870120Z",
+    "updatedAt": "2025-09-28T20:36:26.870120Z"
+  },
+  {
+    "title": "Standard Bank CIB Internship 2025",
+    "description": "Internship programme in Banking providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Banking",
+    "provider": "Standard Bank",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Banking"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2026-01-26T20:36:26.870122Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.standardbank.com/careers/internships"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "internships@standardbank.co.za",
+      "phone": "011 636 9111",
+      "website": "https://www.standardbank.com/careers/internships"
+    },
+    "location": "Johannesburg",
+    "rating": 4.4,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870123Z",
+    "updatedAt": "2025-09-28T20:36:26.870124Z"
+  },
+  {
+    "title": "Clicks Business Internship 2025",
+    "description": "Internship programme in Business providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Business",
+    "provider": "Clicks",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Business"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2026-02-25T20:36:26.870125Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.clicks.co.za/careers/internships"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "internships@clicks.co.za",
+      "phone": "021 460 1911",
+      "website": "https://www.clicks.co.za/careers/internships"
+    },
+    "location": "Centurion",
+    "rating": 4.5,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870126Z",
+    "updatedAt": "2025-09-28T20:36:26.870127Z"
+  },
+  {
+    "title": "Gauteng Economic Dev Internship",
+    "description": "Internship programme in Public Sector providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Public Sector",
+    "provider": "Gauteng Government",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Public Sector"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2025-11-27T20:36:26.870128Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.gauteng.gov.za/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "internships@gauteng.gov.za",
+      "phone": "011 355 7000",
+      "website": "https://www.gauteng.gov.za/careers"
+    },
+    "location": "Johannesburg",
+    "rating": 4.6000000000000005,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870129Z",
+    "updatedAt": "2025-09-28T20:36:26.870130Z"
+  },
+  {
+    "title": "Dept of Labour Internship 2025",
+    "description": "Internship programme in Public Sector providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Public Sector",
+    "provider": "Dept of Labour",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Public Sector"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2025-12-27T20:36:26.870131Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.labour.gov.za/vacancies"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "internships@labour.gov.za",
+      "phone": "012 309 5000",
+      "website": "https://www.labour.gov.za/vacancies"
+    },
+    "location": "Pretoria",
+    "rating": 4.7,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870134Z",
+    "updatedAt": "2025-09-28T20:36:26.870134Z"
+  },
+  {
+    "title": "CIPC Graduate Internship 2026",
+    "description": "Internship programme in Public Sector providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Public Sector",
+    "provider": "CIPC",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Public Sector"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2026-01-26T20:36:26.870136Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.cipc.co.za/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "internships@cipc.co.za",
+      "phone": "012 394 9500",
+      "website": "https://www.cipc.co.za/careers"
+    },
+    "location": "Pretoria",
+    "rating": 4.2,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870137Z",
+    "updatedAt": "2025-09-28T20:36:26.870138Z"
+  },
+  {
+    "title": "City of Johannesburg Internship",
+    "description": "Internship programme in Public Sector providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Public Sector",
+    "provider": "City of Joburg",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Public Sector"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2026-02-25T20:36:26.870139Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.joburg.org.za/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "internships@joburg.org.za",
+      "phone": "011 407 6000",
+      "website": "https://www.joburg.org.za/careers"
+    },
+    "location": "Johannesburg",
+    "rating": 4.3,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870140Z",
+    "updatedAt": "2025-09-28T20:36:26.870141Z"
+  },
+  {
+    "title": "Hesto Harnesses Internship 2025",
+    "description": "Internship programme in Manufacturing providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Manufacturing",
+    "provider": "Hesto",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Manufacturing"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2025-11-27T20:36:26.870142Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.hesto.co.za/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "internships@hesto.co.za",
+      "phone": "032 559 1000",
+      "website": "https://www.hesto.co.za/careers"
+    },
+    "location": "Stanger, KZN",
+    "rating": 4.4,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870143Z",
+    "updatedAt": "2025-09-28T20:36:26.870144Z"
+  },
+  {
+    "title": "Telekom Elevate Internship 2025",
+    "description": "Internship programme in Telecommunications providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Telecommunications",
+    "provider": "Telekom SA",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Telecommunications"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2025-12-27T20:36:26.870145Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.telekom.co.za/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "elevate@telekom.co.za",
+      "phone": "012 680 4200",
+      "website": "https://www.telekom.co.za/careers"
+    },
+    "location": "National",
+    "rating": 4.5,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870146Z",
+    "updatedAt": "2025-09-28T20:36:26.870147Z"
+  },
+  {
+    "title": "TotalEnergies Marketing Intern",
+    "description": "Internship programme in Marketing providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Marketing",
+    "provider": "TotalEnergies",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Marketing"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2026-01-26T20:36:26.870149Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.totalenergies.co.za/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "internships@totalenergies.com",
+      "phone": "011 540 4000",
+      "website": "https://www.totalenergies.co.za/careers"
+    },
+    "location": "Gauteng",
+    "rating": 4.6000000000000005,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870151Z",
+    "updatedAt": "2025-09-28T20:36:26.870151Z"
+  },
+  {
+    "title": "Stefanutti Stocks Internship",
+    "description": "Internship programme in Engineering providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Engineering",
+    "provider": "Stefanutti Stocks",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Engineering"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2026-02-25T20:36:26.870153Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.stefanuttistocks.com/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "internships@stefanuttistocks.com",
+      "phone": "011 571 4300",
+      "website": "https://www.stefanuttistocks.com/careers"
+    },
+    "location": "Durban",
+    "rating": 4.7,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870281Z",
+    "updatedAt": "2025-09-28T20:36:26.870283Z"
+  },
+  {
+    "title": "PPS Healthcare Internship 2025",
+    "description": "Internship programme in Healthcare providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Healthcare",
+    "provider": "PPS Healthcare",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Healthcare"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2025-11-27T20:36:26.870284Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.ppshealthcare.co.za/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "internships@pps.co.za",
+      "phone": "012 648 5000",
+      "website": "https://www.ppshealthcare.co.za/careers"
+    },
+    "location": "Centurion",
+    "rating": 4.2,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870285Z",
+    "updatedAt": "2025-09-28T20:36:26.870286Z"
+  },
+  {
+    "title": "NMISA Audit Internship 2025",
+    "description": "Internship programme in Auditing providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Auditing",
+    "provider": "NMISA",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Auditing"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2025-12-27T20:36:26.870288Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.nmisa.org/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "internships@nmisa.org",
+      "phone": "012 841 2000",
+      "website": "https://www.nmisa.org/careers"
+    },
+    "location": "Pretoria",
+    "rating": 4.3,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870289Z",
+    "updatedAt": "2025-09-28T20:36:26.870289Z"
+  },
+  {
+    "title": "Ray Nkonyeni Internship 2025",
+    "description": "Internship programme in Public Sector providing hands-on experience and professional development.",
+    "category": "internship",
+    "field": "Public Sector",
+    "provider": "Ray Nkonyeni Municipality",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Diploma or Degree",
+      "requiredFields": [
+        "Public Sector"
+      ],
+      "minimumAverage": "60%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed graduates or final year students"
+    },
+    "funding": {
+      "tuition": "N/A",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R5,000 - R10,000"
+    },
+    "applicationDeadline": "2026-01-26T20:36:26.870291Z",
+    "applicationProcess": "Online application, screening, and interview.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.raynkonyeni.gov.za/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Academic Transcript",
+      "ID Copy",
+      "Qualification Certificate"
+    ],
+    "contactInfo": {
+      "email": "internships@raynkonyeni.gov.za",
+      "phone": "039 688 5000",
+      "website": "https://www.raynkonyeni.gov.za/careers"
+    },
+    "location": "KZN",
+    "rating": 4.4,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870292Z",
+    "updatedAt": "2025-09-28T20:36:26.870294Z"
+  },
+  {
+    "title": "Rand Water Learnership 2025",
+    "description": "Learnership programme in Engineering combining theoretical training with practical workplace experience.",
+    "category": "learnership",
+    "field": "Engineering",
+    "provider": "Rand Water",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Engineering"
+      ],
+      "minimumAverage": "50%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed youth"
+    },
+    "funding": {
+      "tuition": "Training provided",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R3,000 - R6,000"
+    },
+    "applicationDeadline": "2025-12-27T20:36:26.870295Z",
+    "applicationProcess": "Online or walk-in application, screening, and selection.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.randwater.co.za/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Matric Certificate",
+      "ID Copy"
+    ],
+    "contactInfo": {
+      "email": "learnerships@randwater.co.za",
+      "phone": "011 682 0911",
+      "website": "https://www.randwater.co.za/careers"
+    },
+    "location": "Gauteng",
+    "rating": 4.0,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870297Z",
+    "updatedAt": "2025-09-28T20:36:26.870298Z"
+  },
+  {
+    "title": "Eskom Learnership 2025",
+    "description": "Learnership programme in Engineering combining theoretical training with practical workplace experience.",
+    "category": "learnership",
+    "field": "Engineering",
+    "provider": "Eskom",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Engineering"
+      ],
+      "minimumAverage": "50%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed youth"
+    },
+    "funding": {
+      "tuition": "Training provided",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R3,000 - R6,000"
+    },
+    "applicationDeadline": "2026-01-26T20:36:26.870300Z",
+    "applicationProcess": "Online or walk-in application, screening, and selection.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.eskom.co.za/careers/learnerships"
+    },
+    "documentsRequired": [
+      "CV",
+      "Matric Certificate",
+      "ID Copy"
+    ],
+    "contactInfo": {
+      "email": "learnerships@eskom.co.za",
+      "phone": "0860 037 566",
+      "website": "https://www.eskom.co.za/careers/learnerships"
+    },
+    "location": "National",
+    "rating": 4.1,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870301Z",
+    "updatedAt": "2025-09-28T20:36:26.870302Z"
+  },
+  {
+    "title": "Transnet Learnership 2025",
+    "description": "Learnership programme in Logistics combining theoretical training with practical workplace experience.",
+    "category": "learnership",
+    "field": "Logistics",
+    "provider": "Transnet",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Logistics"
+      ],
+      "minimumAverage": "50%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed youth"
+    },
+    "funding": {
+      "tuition": "Training provided",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R3,000 - R6,000"
+    },
+    "applicationDeadline": "2026-02-25T20:36:26.870303Z",
+    "applicationProcess": "Online or walk-in application, screening, and selection.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.transnet.net/careers/learnerships"
+    },
+    "documentsRequired": [
+      "CV",
+      "Matric Certificate",
+      "ID Copy"
+    ],
+    "contactInfo": {
+      "email": "learnerships@transnet.net",
+      "phone": "0860 864 331",
+      "website": "https://www.transnet.net/careers/learnerships"
+    },
+    "location": "National",
+    "rating": 4.2,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870304Z",
+    "updatedAt": "2025-09-28T20:36:26.870305Z"
+  },
+  {
+    "title": "Shoprite Learnership 2025",
+    "description": "Learnership programme in Retail combining theoretical training with practical workplace experience.",
+    "category": "learnership",
+    "field": "Retail",
+    "provider": "Shoprite",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Retail"
+      ],
+      "minimumAverage": "50%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed youth"
+    },
+    "funding": {
+      "tuition": "Training provided",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R3,000 - R6,000"
+    },
+    "applicationDeadline": "2026-03-27T20:36:26.870306Z",
+    "applicationProcess": "Online or walk-in application, screening, and selection.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.shopriteholdings.co.za/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Matric Certificate",
+      "ID Copy"
+    ],
+    "contactInfo": {
+      "email": "learnerships@shoprite.co.za",
+      "phone": "021 980 4000",
+      "website": "https://www.shopriteholdings.co.za/careers"
+    },
+    "location": "National",
+    "rating": 4.3,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870307Z",
+    "updatedAt": "2025-09-28T20:36:26.870308Z"
+  },
+  {
+    "title": "Pick n Pay Learnership 2025",
+    "description": "Learnership programme in Retail combining theoretical training with practical workplace experience.",
+    "category": "learnership",
+    "field": "Retail",
+    "provider": "Pick n Pay",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Retail"
+      ],
+      "minimumAverage": "50%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed youth"
+    },
+    "funding": {
+      "tuition": "Training provided",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R3,000 - R6,000"
+    },
+    "applicationDeadline": "2026-04-26T20:36:26.870310Z",
+    "applicationProcess": "Online or walk-in application, screening, and selection.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.pnp.co.za/careers/learnerships"
+    },
+    "documentsRequired": [
+      "CV",
+      "Matric Certificate",
+      "ID Copy"
+    ],
+    "contactInfo": {
+      "email": "learnerships@pnp.co.za",
+      "phone": "021 658 1000",
+      "website": "https://www.pnp.co.za/careers/learnerships"
+    },
+    "location": "National",
+    "rating": 4.4,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870311Z",
+    "updatedAt": "2025-09-28T20:36:26.870312Z"
+  },
+  {
+    "title": "Telkom Learnership 2025",
+    "description": "Learnership programme in Telecommunications combining theoretical training with practical workplace experience.",
+    "category": "learnership",
+    "field": "Telecommunications",
+    "provider": "Telkom",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Telecommunications"
+      ],
+      "minimumAverage": "50%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed youth"
+    },
+    "funding": {
+      "tuition": "Training provided",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R3,000 - R6,000"
+    },
+    "applicationDeadline": "2025-12-27T20:36:26.870314Z",
+    "applicationProcess": "Online or walk-in application, screening, and selection.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.telkom.co.za/careers/learnerships"
+    },
+    "documentsRequired": [
+      "CV",
+      "Matric Certificate",
+      "ID Copy"
+    ],
+    "contactInfo": {
+      "email": "learnerships@telkom.co.za",
+      "phone": "012 311 3000",
+      "website": "https://www.telkom.co.za/careers/learnerships"
+    },
+    "location": "National",
+    "rating": 4.0,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870315Z",
+    "updatedAt": "2025-09-28T20:36:26.870315Z"
+  },
+  {
+    "title": "Sasol Learnership 2025",
+    "description": "Learnership programme in Chemical combining theoretical training with practical workplace experience.",
+    "category": "learnership",
+    "field": "Chemical",
+    "provider": "Sasol",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Chemical"
+      ],
+      "minimumAverage": "50%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed youth"
+    },
+    "funding": {
+      "tuition": "Training provided",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R3,000 - R6,000"
+    },
+    "applicationDeadline": "2026-01-26T20:36:26.870317Z",
+    "applicationProcess": "Online or walk-in application, screening, and selection.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.sasol.com/careers/learnerships"
+    },
+    "documentsRequired": [
+      "CV",
+      "Matric Certificate",
+      "ID Copy"
+    ],
+    "contactInfo": {
+      "email": "learnerships@sasol.com",
+      "phone": "011 441 3111",
+      "website": "https://www.sasol.com/careers/learnerships"
+    },
+    "location": "Secunda",
+    "rating": 4.1,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870318Z",
+    "updatedAt": "2025-09-28T20:36:26.870319Z"
+  },
+  {
+    "title": "SAB Learnership 2025",
+    "description": "Learnership programme in FMCG combining theoretical training with practical workplace experience.",
+    "category": "learnership",
+    "field": "FMCG",
+    "provider": "SAB",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "FMCG"
+      ],
+      "minimumAverage": "50%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed youth"
+    },
+    "funding": {
+      "tuition": "Training provided",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R3,000 - R6,000"
+    },
+    "applicationDeadline": "2026-02-25T20:36:26.870320Z",
+    "applicationProcess": "Online or walk-in application, screening, and selection.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.ab-inbev.co.za/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Matric Certificate",
+      "ID Copy"
+    ],
+    "contactInfo": {
+      "email": "learnerships@za.ab-inbev.com",
+      "phone": "011 407 1700",
+      "website": "https://www.ab-inbev.co.za/careers"
+    },
+    "location": "National",
+    "rating": 4.2,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870321Z",
+    "updatedAt": "2025-09-28T20:36:26.870322Z"
+  },
+  {
+    "title": "Dept Public Works Learnership",
+    "description": "Learnership programme in Construction combining theoretical training with practical workplace experience.",
+    "category": "learnership",
+    "field": "Construction",
+    "provider": "Dept Public Works",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Construction"
+      ],
+      "minimumAverage": "50%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed youth"
+    },
+    "funding": {
+      "tuition": "Training provided",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R3,000 - R6,000"
+    },
+    "applicationDeadline": "2026-03-27T20:36:26.870323Z",
+    "applicationProcess": "Online or walk-in application, screening, and selection.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.publicworks.gov.za/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Matric Certificate",
+      "ID Copy"
+    ],
+    "contactInfo": {
+      "email": "learnerships@dpw.gov.za",
+      "phone": "012 492 4000",
+      "website": "https://www.publicworks.gov.za/careers"
+    },
+    "location": "National",
+    "rating": 4.3,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870324Z",
+    "updatedAt": "2025-09-28T20:36:26.870325Z"
+  },
+  {
+    "title": "Sanral Learnership 2025",
+    "description": "Learnership programme in Civil Engineering combining theoretical training with practical workplace experience.",
+    "category": "learnership",
+    "field": "Civil Engineering",
+    "provider": "SANRAL",
+    "eligibility": {
+      "minAge": 18,
+      "maxAge": 35,
+      "requiredEducation": "Matric",
+      "requiredFields": [
+        "Civil Engineering"
+      ],
+      "minimumAverage": "50%",
+      "citizenship": [
+        "South African"
+      ],
+      "yearOfStudy": [],
+      "otherRequirements": "Unemployed youth"
+    },
+    "funding": {
+      "tuition": "Training provided",
+      "accommodation": "Not provided",
+      "allowance": "Monthly stipend R3,000 - R6,000"
+    },
+    "applicationDeadline": "2026-04-26T20:36:26.870326Z",
+    "applicationProcess": "Online or walk-in application, screening, and selection.",
+    "applyMethod": {
+      "type": "redirect",
+      "url": "https://www.nra.co.za/careers"
+    },
+    "documentsRequired": [
+      "CV",
+      "Matric Certificate",
+      "ID Copy"
+    ],
+    "contactInfo": {
+      "email": "learnerships@nra.co.za",
+      "phone": "012 426 6000",
+      "website": "https://www.nra.co.za/careers"
+    },
+    "location": "National",
+    "rating": 4.4,
+    "applicationsCount": 0,
+    "isActive": true,
+    "views": 0,
+    "applications": [],
+    "createdAt": "2025-09-28T20:36:26.870327Z",
+    "updatedAt": "2025-09-28T20:36:26.870328Z"
+  }
+]
