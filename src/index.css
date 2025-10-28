@@ -25,3 +25,136 @@
 html {
   scroll-behavior: smooth;
 }
+/* ========================================
+   UNIVERSAL COLOR FIX FOR FORMS & INPUTS
+   ======================================== */
+
+/* Force all form containers to have proper contrast */
+form {
+  color: #111827 !important;
+}
+
+/* Force all labels to be dark */
+label {
+  color: #374151 !important;
+}
+
+/* Force all inputs, selects, textareas to have dark text on white background */
+input,
+select,
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+input[type="number"] {
+  color: #111827 !important;
+  background-color: white !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Force text in cards/containers with white/light backgrounds */
+.bg-white,
+.bg-white *:not(button):not(a) {
+  color: #111827 !important;
+}
+
+.bg-slate-50,
+.bg-slate-50 *:not(button):not(a),
+.bg-gray-50,
+.bg-gray-50 *:not(button):not(a) {
+  color: #111827 !important;
+}
+
+/* Ensure error messages are visible */
+.text-red-600,
+.text-red-800,
+.text-red-500 {
+  color: #dc2626 !important;
+}
+
+/* Ensure success messages are visible */
+.text-green-600,
+.text-green-800,
+.text-green-500 {
+  color: #16a34a !important;
+}
+
+/* Modal backgrounds */
+.modal-content,
+.modal-content * {
+  color: #111827 !important;
+}
+
+/* Admin dashboard fix */
+.admin-dashboard,
+.admin-dashboard * {
+  color: #111827 !important;
+}
+
+/* Auth pages (login/register) */
+.auth-container,
+.auth-container * {
+  color: #111827 !important;
+}
+
+/* Specific overrides for slate colored text */
+.text-slate-900 {
+  color: #0f172a !important;
+}
+
+.text-slate-800 {
+  color: #1e293b !important;
+}
+
+.text-slate-700 {
+  color: #334155 !important;
+}
+
+.text-slate-600 {
+  color: #475569 !important;
+}
+
+.text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Specific overrides for gray colored text */
+.text-gray-900 {
+  color: #111827 !important;
+}
+
+.text-gray-800 {
+  color: #1f2937 !important;
+}
+
+.text-gray-700 {
+  color: #374151 !important;
+}
+
+.text-gray-600 {
+  color: #4b5563 !important;
+}
+
+.text-gray-500 {
+  color: #6b7280 !important;
+}
+
+.text-gray-400 {
+  color: #9ca3af !important;
+}
+
+/* Keep buttons with their original colors */
+button {
+  color: inherit;
+}
+
+/* Keep links with their original colors */
+a {
+  color: inherit;
+}
