@@ -10,6 +10,8 @@ function ApplyModal({ opportunity, isOpen, onClose, onSubmit }) {
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
+  const [showSuccess, setShowSuccess] = useState(false);
+
 
   useEffect(() => {
     if (opportunity && isOpen) {
@@ -98,98 +100,79 @@ function ApplyModal({ opportunity, isOpen, onClose, onSubmit }) {
   };
 
   // ✅ FIXED: Better document validation - by document type category, not exact name match
-  const validateForm = () => {
-    const newErrors = {};
+ const validateForm = () => {
+  const newErrors = {};
 
-    // Check if all questions are answered
-    formData.answers.forEach((answer, index) => {
-      if (!answer.answer.trim()) {
-        newErrors[`answer${index}`] = 'This question is required';
-      }
+  // Check if all questions are answered
+  formData.answers.forEach((answer, index) => {
+    if (!answer.answer.trim()) {
+      newErrors[`answer${index}`] = 'This question is required';
+    }
+  });
+
+  // ✅ SIMPLIFIED: Just check document count
+  if (opportunity.documentsRequired && opportunity.documentsRequired.length > 0) {
+    const requiredCount = opportunity.documentsRequired.length;
+    const uploadedCount = formData.documents.length;
+
+    if (uploadedCount < requiredCount) {
+      newErrors.documents = `Please upload at least ${requiredCount} document(s). You have uploaded ${uploadedCount}.`;
+    }
+    // Optional: Show a friendly reminder (not an error)
+    else if (uploadedCount === requiredCount) {
+      console.log('✅ Document count matches requirements. Admin will verify document types.');
+    }
+  }
+
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0;
+};
+
+
+  //
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  if (!validateForm()) {
+    const firstError = document.querySelector('.text-red-500');
+    if (firstError) {
+      firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    return;
+  }
+
+  setSubmitting(true);
+  setErrors({ ...errors, submit: null });
+
+  try {
+    await onSubmit({
+      opportunityId: opportunity._id,
+      answers: formData.answers,
+      documents: formData.documents
     });
-
-    // ✅ IMPROVED: Check required documents by category/type
-    if (opportunity.documentsRequired && opportunity.documentsRequired.length > 0) {
-      const requiredDocs = opportunity.documentsRequired;
-      const uploadedDocs = formData.documents;
-
-      // Check if minimum documents are uploaded
-      if (uploadedDocs.length < requiredDocs.length) {
-        newErrors.documents = `Please upload at least ${requiredDocs.length} document(s). You have uploaded ${uploadedDocs.length}.`;
-      }
-
-      // More flexible matching - check if key document types are present
-      const hasCV = uploadedDocs.some(doc => 
-        doc.name.toLowerCase().includes('cv') || 
-        doc.name.toLowerCase().includes('resume') ||
-        doc.type.includes('pdf') ||
-        doc.type.includes('document')
-      );
-
-      const hasTranscript = uploadedDocs.some(doc => 
-        doc.name.toLowerCase().includes('transcript') ||
-        doc.name.toLowerCase().includes('academic') ||
-        doc.name.toLowerCase().includes('marks')
-      );
-
-      const hasID = uploadedDocs.some(doc => 
-        doc.name.toLowerCase().includes('id') ||
-        doc.name.toLowerCase().includes('identity')
-      );
-
-      // Only warn if clearly missing critical documents
-      const missingCritical = [];
-      if (requiredDocs.some(d => d.toLowerCase().includes('cv')) && !hasCV) {
-        missingCritical.push('CV/Resume');
-      }
-      if (requiredDocs.some(d => d.toLowerCase().includes('transcript')) && !hasTranscript) {
-        missingCritical.push('Academic Transcript');
-      }
-      if (requiredDocs.some(d => d.toLowerCase().includes('id')) && !hasID) {
-        missingCritical.push('ID Document');
-      }
-
-      if (missingCritical.length > 0 && uploadedDocs.length < requiredDocs.length) {
-        newErrors.documents = `Important: Please ensure you've uploaded: ${missingCritical.join(', ')}`;
-      }
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
     
-    if (!validateForm()) {
-      // Scroll to first error
-      const firstError = document.querySelector('.text-red-500');
-      if (firstError) {
-        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-      return;
-    }
+    // ✅ SHOW SUCCESS MESSAGE
+    setShowSuccess(true);
+    
+    // Reset form
+    setFormData({ answers: [], documents: [] });
+    setCurrentStep(1);
+    
+    // Close modal after 2 seconds to let user see the success message
+    setTimeout(() => {
+      onClose();
+    }, 2000);
+    
+  } catch (error) {
+    console.error('Error submitting application:', error);
+    setErrors({ ...errors, submit: error.message || 'Failed to submit application. Please try again.' });
+  } finally {
+    setSubmitting(false);
+  }
+};
 
-    setSubmitting(true);
-    setErrors({ ...errors, submit: null });
 
-    try {
-      await onSubmit({
-        opportunityId: opportunity._id,
-        answers: formData.answers,
-        documents: formData.documents
-      });
-      
-      // Reset form
-      setFormData({ answers: [], documents: [] });
-      setCurrentStep(1);
-    } catch (error) {
-      console.error('Error submitting application:', error);
-      setErrors({ ...errors, submit: error.message || 'Failed to submit application. Please try again.' });
-    } finally {
-      setSubmitting(false);
-    }
-  };
+
 
   const formatFileSize = (bytes) => {
     if (bytes < 1024) return bytes + ' B';
@@ -475,31 +458,68 @@ function ApplyModal({ opportunity, isOpen, onClose, onSubmit }) {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes fade-in {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
+      {/* Success Overlay */}
+      {showSuccess && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[60]">
+          <div className="bg-white rounded-2xl p-12 text-center shadow-2xl animate-bounce-in">
+            <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h2 className="text-2xl font-bold text-slate-900 mb-2">Application Submitted!</h2>
+            <p className="text-slate-600 mb-6">Thank you! Your application has been successfully submitted.</p>
+            <p className="text-sm text-slate-500">Closing in 2 seconds...</p>
+          </div>
+        </div>
+      )}
 
-        @keyframes scale-in {
-          from {
-            transform: scale(0.95);
-            opacity: 0;
-          }
-          to {
-            transform: scale(1);
-            opacity: 1;
-          }
-        }
+<style jsx>{`
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 
-        .animate-fade-in {
-          animation: fade-in 0.2s ease-out;
-        }
+  @keyframes scale-in {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
 
-        .animate-scale-in {
-          animation: scale-in 0.3s ease-out;
-        }
-      `}</style>
+  @keyframes bounce-in {
+    0% {
+      transform: scale(0.3);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    70% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.2s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.3s ease-out;
+  }
+
+  .animate-bounce-in {
+    animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+`}</style>
+
     </div>
   );
 }
