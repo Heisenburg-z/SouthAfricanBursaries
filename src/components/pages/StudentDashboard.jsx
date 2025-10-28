@@ -21,6 +21,9 @@ import {
 } from 'lucide-react';
 import ProfileUpdate from './components/ProfileUpdate.jsx';
 import ApplicationsTab from './components/ApplicationsTab';
+import SuccessNotification from './components/SuccessNotification';
+import ApplyModal from './components/ApplyModal';
+
 
 function StudentDashboard() {
   const [activeTab, setActiveTab] = useState('overview');
@@ -30,6 +33,11 @@ function StudentDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showProfileUpdate, setShowProfileUpdate] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+const [successMessage, setSuccessMessage] = useState('');
+const [selectedOpportunity, setSelectedOpportunity] = useState(null);
+const [showApplyModal, setShowApplyModal] = useState(false);
+
 
   useEffect(() => {
     const fetchDashboardData = async () => {
@@ -99,6 +107,40 @@ function StudentDashboard() {
 
     fetchDashboardData();
   }, []);
+const handleApplySubmit = async (applicationData) => {
+  try {
+    const token = localStorage.getItem('token');
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/applications`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(applicationData)
+    });
+
+    if (response.ok) {
+      setShowApplyModal(false);
+      setSelectedOpportunity(null);
+      setSuccessMessage('Application submitted successfully!');
+      setShowSuccess(true);
+      
+      // Refresh dashboard data
+      fetchDashboardData();
+    } else {
+      const errorData = await response.json();
+      throw new Error(errorData.message || 'Failed to submit application');
+    }
+  } catch (error) {
+    console.error('Error submitting application:', error);
+    throw error;
+  }
+};
+
+const handleApplyClick = (opportunity) => {
+  setSelectedOpportunity(opportunity);
+  setShowApplyModal(true);
+};
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -613,8 +655,31 @@ function StudentDashboard() {
           onClose={() => setShowProfileUpdate(false)}
         />
       )}
+   
+
+      {/* Success Notification */}
+      {showSuccess && (
+        <SuccessNotification
+          message={successMessage}
+          onClose={() => setShowSuccess(false)}
+        />
+      )}
+
+      {/* Apply Modal */}
+      {showApplyModal && selectedOpportunity && (
+        <ApplyModal
+          opportunity={selectedOpportunity}
+          isOpen={showApplyModal}
+          onClose={() => {
+            setShowApplyModal(false);
+            setSelectedOpportunity(null);
+          }}
+          onSubmit={handleApplySubmit}
+        />
+      )}
     </div>
   );
 }
+
 
 export default StudentDashboard;

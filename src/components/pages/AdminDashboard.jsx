@@ -241,6 +241,7 @@ const AdminDashboard = () => {
             handleExport={handleExport}
             handleUpdateApplicationStatus={handleUpdateApplicationStatus}
             openModal={openModal}
+            onApplyClick={handleApplyClick}
           />
         )}
 
