@@ -1,4 +1,3 @@
-
 // components/LoginForm.jsx
 import React, { useState, useEffect } from 'react';
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
@@ -20,10 +19,18 @@ const LoginForm = () => {
   useEffect(() => {
     console.log('LoginForm - User state changed:', user);
     
-    // If user becomes available, navigate to dashboard
+    // If user becomes available, navigate based on role
     if (user && user._id) {
-      console.log('Valid user detected, navigating to dashboard...');
-      navigate('/dashboard', { replace: true });
+      console.log('Valid user detected, checking role...');
+      
+      // Check if user is admin
+      if (user.isAdmin) {
+        console.log('Admin user detected, navigating to admin dashboard...');
+        navigate('/admin', { replace: true });
+      } else {
+        console.log('Regular user detected, navigating to student dashboard...');
+        navigate('/dashboard', { replace: true });
+      }
     }
   }, [user, navigate]);
 
@@ -74,7 +81,22 @@ const LoginForm = () => {
         const storedUser = localStorage.getItem('user');
         if (storedUser && (!user || !user._id)) {
           console.log('State not updated, but user found in localStorage. Forcing navigation...');
-          navigate('/dashboard', { replace: true });
+          
+          try {
+            const parsedUser = JSON.parse(storedUser);
+            
+            // Route based on admin status
+            if (parsedUser.isAdmin) {
+              console.log('Admin detected in localStorage, forcing navigation to /admin');
+              navigate('/admin', { replace: true });
+            } else {
+              console.log('Regular user detected in localStorage, forcing navigation to /dashboard');
+              navigate('/dashboard', { replace: true });
+            }
+          } catch (error) {
+            console.error('Error parsing user from localStorage:', error);
+            navigate('/dashboard', { replace: true }); // Fallback to dashboard
+          }
         }
       }, 1000);
       
@@ -237,7 +259,7 @@ const LoginForm = () => {
         </div>
       </div>
     </form>
-  )
+  );
 };
 
 export default LoginForm;

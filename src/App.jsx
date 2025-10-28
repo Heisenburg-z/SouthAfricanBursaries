@@ -6,10 +6,11 @@ import { AuthProvider } from './components/pages/contexts/AuthContext.jsx';
 import Header from './components/layout/Header.jsx';
 import Footer from './components/layout/Footer.jsx';
 import HomePage from './components/pages/HomePage.jsx';
-import AdminPage from './components/pages/AdminPage.jsx';
+import AdminDashboard from './components/pages/AdminDashboard.jsx'; // ← CHANGED THIS
 import StudentDashboard from './components/pages/StudentDashboard.jsx';
 import AuthPage from './components/pages/AuthPage.jsx';
 import ProtectedRoute from './components/pages/components/ProtectedRoute.jsx';
+
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
                 path="/admin" 
                 element={
                   <ProtectedRoute adminOnly={true}>
-                    <AdminPage />
+                    <AdminDashboard /> {/* ← CHANGED THIS */}
                   </ProtectedRoute>
                 } 
               />
