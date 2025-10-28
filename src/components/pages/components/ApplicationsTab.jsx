@@ -179,36 +179,30 @@ function ApplicationsTab() {
     const newDocuments = formData.documents.filter((_, i) => i !== index);
     setFormData({ ...formData, documents: newDocuments });
   };
-
-  const validateForm = () => {
-    const newErrors = {};
-
-    formData.answers.forEach((answer, index) => {
-      if (!answer.answer.trim()) {
-        newErrors[`answer_${index}`] = 'This question is required';
-      }
-    });
-
-    if (selectedOpportunity.documentsRequired && selectedOpportunity.documentsRequired.length > 0) {
-      const uploadedDocNames = formData.documents.map(doc => 
-        doc.name.toLowerCase().replace(/\.[^/.]+$/, "")
-      );
-      
-      const missingDocs = selectedOpportunity.documentsRequired.filter(requiredDoc => {
-        const requiredDocLower = requiredDoc.toLowerCase();
-        return !uploadedDocNames.some(uploaded => 
-          uploaded.includes(requiredDocLower) || requiredDocLower.includes(uploaded)
-        );
-      });
-      
-      if (missingDocs.length > 0) {
-        newErrors.documents = `Missing required documents: ${missingDocs.join(', ')}`;
-      }
+const validateForm = () => {
+  const newErrors = {};
+  
+  // Check if all questions are answered
+  formData.answers.forEach((answer, index) => {
+    if (!answer.answer.trim()) {
+      newErrors[`answer_${index}`] = 'This question is required';
     }
+  });
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+  // ✅ SIMPLIFIED: Only validate by document count
+  if (selectedOpportunity.documentsRequired && selectedOpportunity.documentsRequired.length > 0) {
+    const requiredCount = selectedOpportunity.documentsRequired.length;
+    const uploadedCount = formData.documents.length;
+
+    if (uploadedCount < requiredCount) {
+      newErrors.documents = `Please upload at least ${requiredCount} document(s). You have uploaded ${uploadedCount}.`;
+    }
+  }
+
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0;
+};
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
