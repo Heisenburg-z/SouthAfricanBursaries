@@ -261,7 +261,7 @@ const AdminDashboard = () => {
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
             handleExport={handleExport}
-            isAdmin={user && user.isAdmin}
+            isAdmin={true}
           />
         )}
 
