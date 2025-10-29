@@ -24,7 +24,7 @@ const NewsletterTab = ({
     setAdminMsg('');
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('/api/newsletter/send', {
+      const res = await fetch('https://studentopportunities.onrender.com/api/newsletter/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
