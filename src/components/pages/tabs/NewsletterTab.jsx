@@ -1,15 +1,87 @@
-import React from 'react';
-import { Mail, CheckCircle, TrendingUp, Search, Download } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, CheckCircle, TrendingUp, Search, Download, Send } from 'lucide-react';
 
-const NewsletterTab = ({ newsletters, searchTerm, setSearchTerm, handleExport }) => {
+const NewsletterTab = ({
+  newsletters,
+  searchTerm,
+  setSearchTerm,
+  handleExport,
+  isAdmin // NEW: Pass true if viewing as admin
+}) => {
+  const [subject, setSubject] = useState('');
+  const [content, setContent] = useState('');
+  const [sending, setSending] = useState(false);
+  const [adminMsg, setAdminMsg] = useState('');
+
   const filteredNewsletters = newsletters.filter(sub =>
     sub.email.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
   const activeCount = newsletters.filter(sub => sub.isSubscribed).length;
+
+  // NEW: Admin send newsletter function
+  async function handleSendNewsletter() {
+    setSending(true);
+    setAdminMsg('');
+    try {
+      const token = localStorage.getItem('token');
+      const res = await fetch('/api/newsletter/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify({ subject, content }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setAdminMsg(`Success: Newsletter sent to ${data.stats.successful} of ${data.stats.total} emails`);
+        setSubject('');
+        setContent('');
+      } else {
+        setAdminMsg(data.message || 'Failed to send newsletter');
+      }
+    } catch (e) {
+      setAdminMsg('Network or server error: ' + e.message);
+    } finally {
+      setSending(false);
+    }
+  }
 
   return (
     <div className="space-y-6">
+      {/* ADMIN Panel: Compose Newsletter */}
+      {isAdmin && (
+        <div className="bg-white border border-emerald-100 rounded-lg p-6 mb-6 shadow flex flex-col gap-3">
+          <h3 className="text-lg font-semibold mb-2">Send Newsletter</h3>
+          <input
+            className="border px-2 py-2 rounded font-medium mb-2"
+            placeholder="Subject"
+            value={subject}
+            onChange={e => setSubject(e.target.value)}
+            disabled={sending}
+          />
+          <textarea
+            className="border px-2 py-2 rounded mb-2"
+            placeholder="HTML content for your newsletter"
+            rows={5}
+            value={content}
+            onChange={e => setContent(e.target.value)}
+            disabled={sending}
+          />
+          <button
+            className="bg-emerald-600 text-white px-4 py-2 rounded flex items-center gap-2 hover:bg-emerald-700 transition disabled:opacity-50"
+            onClick={handleSendNewsletter}
+            disabled={sending || !subject || !content}
+          >
+            <Send className="w-5 h-5" />
+            {sending ? 'Sending...' : 'Send Newsletter'}
+          </button>
+          {adminMsg && (
+            <p className="mt-1 text-sm text-emerald-700">{adminMsg}</p>
+          )}
+        </div>
+      )}
+
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white rounded-lg shadow-sm p-6">
@@ -50,7 +122,7 @@ const NewsletterTab = ({ newsletters, searchTerm, setSearchTerm, handleExport })
               type="text"
               placeholder="Search subscribers..."
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={e => setSearchTerm(e.target.value)}
               className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
@@ -82,7 +154,7 @@ const NewsletterTab = ({ newsletters, searchTerm, setSearchTerm, handleExport })
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
-              {filteredNewsletters.map((subscriber) => (
+              {filteredNewsletters.map(subscriber => (
                 <tr key={subscriber._id} className="hover:bg-gray-50">
                   <td className="px-6 py-4 font-medium text-gray-900">{subscriber.email}</td>
                   <td className="px-6 py-4 text-sm text-gray-600">
