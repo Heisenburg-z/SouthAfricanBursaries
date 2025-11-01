@@ -88,7 +88,7 @@ function Footer() {
                   className="flex items-center space-x-3 text-slate-400 hover:text-emerald-400 transition-all duration-300 group text-sm"
                 >
                   <Phone className="h-4 w-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
-                  <span className="group-hover:translate-x-1 transition-transform duration-300">+27 12 345 6789</span>
+                  <span className="group-hover:translate-x-1 transition-transform duration-300">+27 73 563 2209</span>
                 </a>
               </li>
               <li>
