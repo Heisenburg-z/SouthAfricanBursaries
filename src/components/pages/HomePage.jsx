@@ -158,7 +158,7 @@ const handleApply = async (applicationData) => {
       // window.location.href = '/login';
       // return;
 
-      return <Navigate to="/login" replace />;
+      return <Navigate to="/login" replace />;//it gives 404 not found on deployment but works locally
     }
 
     const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/applications`, {
