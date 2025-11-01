@@ -154,7 +154,8 @@ const handleApply = async (applicationData) => {
     
     if (!token) {
       alert('Please log in to apply for opportunities');
-      // Redirect to login page or show login modal
+      // 
+      window.location.href = '/login';
       return;
     }
 
