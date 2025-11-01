@@ -155,8 +155,10 @@ const handleApply = async (applicationData) => {
     if (!token) {
       alert('Please log in to apply for opportunities');
       // 
-      window.location.href = '/login';
-      return;
+      // window.location.href = '/login';
+      // return;
+
+      return <Navigate to="/login" replace />;
     }
 
     const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/applications`, {
